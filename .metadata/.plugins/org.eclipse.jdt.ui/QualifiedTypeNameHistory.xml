@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="ilog.concert.IloNumExpr"/>
+    <fullyQualifiedTypeName name="ilog.concert.IloNumVar"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="ilog.concert.IloLinearNumExpr"/>
+    <fullyQualifiedTypeName name="javax.management.monitor.GaugeMonitorMBean"/>
+</qualifiedTypeNameHistroy>
