@@ -2,7 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="ilog.concert.IloNumExpr"/>
     <fullyQualifiedTypeName name="ilog.concert.IloNumVar"/>
-    <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="ilog.concert.IloLinearNumExpr"/>
     <fullyQualifiedTypeName name="javax.management.monitor.GaugeMonitorMBean"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
 </qualifiedTypeNameHistroy>

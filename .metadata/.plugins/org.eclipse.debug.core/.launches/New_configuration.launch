@@ -12,5 +12,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Main"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="Scheduling"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Scheduling"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=IBM\ILOG\CPLEX_Studio1210\cplex\bin\x64_win64"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=&quot;C:\Program Files\IBM\ILOG\CPLEX_Studio1210\cplex\bin\x64_win64&quot;"/>
 </launchConfiguration>
