@@ -8,5 +8,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files/IBM/ILOG/CPLEX_Studio1210/cplex/lib/cplex.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Matte/Desktop/Dottorato/Scheduling Project/Scheduling/Scheduling/lib/jxl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

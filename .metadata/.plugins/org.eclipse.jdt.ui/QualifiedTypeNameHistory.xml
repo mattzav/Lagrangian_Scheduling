@@ -2,7 +2,19 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="ilog.concert.IloNumExpr"/>
     <fullyQualifiedTypeName name="ilog.concert.IloNumVar"/>
-    <fullyQualifiedTypeName name="ilog.concert.IloLinearNumExpr"/>
     <fullyQualifiedTypeName name="javax.management.monitor.GaugeMonitorMBean"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="ilog.concert.IloLinearNumExpr"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="jxl.write.WritableWorkbook"/>
+    <fullyQualifiedTypeName name="jxl.write.WritableSheet"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="jxl.Workbook"/>
+    <fullyQualifiedTypeName name="java.awt.Label"/>
+    <fullyQualifiedTypeName name="jxl.write.Label"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="jxl.write.WriteException"/>
+    <fullyQualifiedTypeName name="com.sun.jmx.mbeanserver.SunJmxMBeanServer"/>
 </qualifiedTypeNameHistroy>

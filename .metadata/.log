@@ -1,4 +1,4 @@
-!SESSION 2020-10-15 10:17:37.503 -----------------------------------------------
+!SESSION 2020-10-21 10:05:06.602 -----------------------------------------------
 eclipse.buildId=4.17.0.I20200902-1800
 java.version=14.0.2
 java.vendor=Oracle Corporation
@@ -6,170 +6,1678 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
-!ENTRY org.eclipse.jface 2 0 2020-10-15 10:18:02.762
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-15 10:18:02.762
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@154f8280,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@24f90aff,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+This is a continuation of log file C:\Users\Matte\Desktop\Dottorato\Scheduling Project\Scheduling\.metadata\.bak_0.log
+Created Time: 2020-10-21 10:34:14.232
 
-!ENTRY org.eclipse.egit.ui 2 0 2020-10-15 10:18:09.604
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Matte'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2020-10-15 11:04:31.888 -----------------------------------------------
-eclipse.buildId=4.17.0.I20200902-1800
-java.version=14.0.2
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
-Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data C:\Users\Matte\Desktop\Dottorato\Scheduling Project\Scheduling -product org.eclipse.epp.package.java.product
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-10-21 10:34:14.237
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1281)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1354)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:3883)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3963)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:561)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:749)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:167)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 
-!ENTRY org.eclipse.jface 2 0 2020-10-15 11:04:34.443
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-15 11:04:34.443
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@18463720,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64eeddd8,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-10-21 10:34:14.251
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1281)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1354)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:3883)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:3963)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:561)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:749)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:167)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 
-!ENTRY org.eclipse.egit.ui 2 0 2020-10-15 11:04:38.567
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Matte'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2020-10-15 11:50:26.085 -----------------------------------------------
-eclipse.buildId=4.17.0.I20200902-1800
-java.version=14.0.2
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+!ENTRY org.eclipse.jdt.core 4 4 2020-10-21 10:34:15.307
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
 
-!ENTRY org.eclipse.jface 2 0 2020-10-15 11:50:30.232
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-15 11:50:30.232
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@58b3eb1,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6d7e2795,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+import java.io.File;
 
-!ENTRY org.eclipse.egit.ui 2 0 2020-10-15 11:50:35.517
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Matte'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2020-10-16 11:36:35.458 -----------------------------------------------
-eclipse.buildId=4.17.0.I20200902-1800
-java.version=14.0.2
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+import ilog.concert.*;
+import ilog.cplex.*;
+import ilog.cplex.IloCplex.UnknownObjectException;
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.Number;
 
-!ENTRY org.eclipse.jface 2 0 2020-10-16 11:37:09.551
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-16 11:37:09.551
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6c36051c,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@45d46254,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+// controllare con maxBound dinamico
+//1 - aplha - beta parte gia <0
 
-!ENTRY org.eclipse.egit.ui 2 0 2020-10-16 11:37:14.861
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Matte'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2020-10-16 12:31:26.215 -----------------------------------------------
-eclipse.buildId=4.17.0.I20200902-1800
-java.version=14.0.2
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+public class LagrangianSolver {
 
-!ENTRY org.eclipse.jface 2 0 2020-10-16 12:31:31.201
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-16 12:31:31.201
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7e1762e6,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5bccaedb,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+	private static final String EXCEL_FILE_LOCATION = "src\\results\\results.xls";
+	static WritableWorkbook workBook = null;
+	static WritableSheet excelSheet;
 
-!ENTRY org.eclipse.egit.ui 2 0 2020-10-16 12:31:35.742
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Matte'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+	public static double[] d;//
+	public static double alpha, beta, v;
+	public static double[][] gamma, delta, epsilon;
+	public static int p[]; //
+	public static double w[][];
+
+	public static double Pa, Pb;
+	public static double x_val[][];
+
+	public static double subgrad_alpha = 0., subgrad_beta = 0;
+	public static double[][] subgrad_gamma, subgrad_delta, subgrad_epsilon;
+	public static int n, nA, nB;
+	public static int numIter, countIter, lastIter;
+
+	public static Double bestUB = Double.MAX_VALUE, bestLB = -Double.MAX_VALUE, currUB = null, currLB = null,
+			maxBound = null;
+
+	public static void main(String[] args) throws IloException {
+
+		for (n = 50; n < 100; n += 10) {
+			for (nA = n / 2; nA <= n / 2 + 1; nA++) {
+				nB = n - nA;
+				for (int pow = 2; pow <= 5; pow++) {
+
+					initParam(Math.pow(10, pow));
+					computeMaxBound();
+
+					IloCplex cplex = new IloCplex();
+					cplex.setOut(null);
+
+					while (countIter < numIter && bestUB > Math.pow(10, -6)) {
+						// System.out.println(countIter);
+						countIter++;
+
+						IloNumVar[][] x = new IloNumVar[n][];
+						for (int i = 0; i < n; i++)
+							x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+
+						createRelaxationModel(cplex, x, n);
+
+//			System.out.println("START");
+						if (cplex.solve()) {
+//			printMultipliers();
+							updateOptimalWandV(cplex, x);
+							updateSubGrad();
+							updateBounds(cplex);
+							updateMultipliers();
+//				printParam();
+						}
+						cplex.clearModel();
+					}
+					System.out
+							.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = " + Math.pow(10, pow)
+									+ ", N.iter = " + lastIter + " , Obj = " + bestUB + " ," + getExpected(nA, nB));
+				}
+			}
+		}
+	}
+
+	private static String getExpected(int nA, int nB) {
+		double expected = (nA+nB)/(2*nA*nB)
+		return String.valueOf(((nA+nB)(2*nA*nB)));
+	}
+
+	private static void createRelaxationModel(IloCplex cplex, IloNumVar[][] x, int n) throws IloException {
+
+		IloLinearNumExpr fo = cplex.linearNumExpr();
+
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++) {
+				fo.addTerm((gamma[j][t] - epsilon[j][t]) * d[t], x[j][t]);
+				for (int l = 0; l < n; l++)
+					for (int k = 0; k < t; k++) {
+						fo.addTerm((gamma[j][t] - delta[j][t]) * p[l], x[l][k]);
+					}
+			}
+
+		cplex.addMinimize(fo);
+
+		// assignment
+		for (int j = 0; j < n; j++) {
+			cplex.addEq(cplex.sum(x[j]), 1);
+		}
+
+		for (int t = 0; t < n; t++) {
+			IloLinearNumExpr t_th_constraint = cplex.linearNumExpr();
+			for (int j = 0; j < n; j++)
+				t_th_constraint.addTerm(1, x[j][t]);
+			cplex.addEq(1, t_th_constraint);
+		}
+		// end assignment
+	}
+
+	private static void computeMaxBound() {
+
+		double current = 0;
+
+		double sumA = 0, sumB = 0;
+		int countA = 0;
+		int countB = 0;
+
+		for (int i = 0; i < n; i++) {
+			if (countB == nB) {
+				current += p[countA];
+				sumA += current;
+				countA++;
+			} else if (countA == nA) {
+				current += p[nA + countB];
+				sumB += current;
+				countB++;
+			} else if (i % 2 == 0) {
+				current += p[countA];
+				sumA += current;
+				countA++;
+			} else {
+				current += p[nA + countB];
+				sumB += current;
+				countB++;
+			}
+
+		}
+
+		maxBound = Math.max(sumA / nA - sumB / nB, sumB / nB - sumA / nA);
+//		System.out.println("MB" + maxBound);
+
+	}
+
+	private static void printMultipliers() {
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < n; j++) {
+				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j]);
+				System.out.println("delta{" + i + "," + j + "} = " + delta[i][j]);
+				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j]);
+			}
+	}
+
+	private static void printParam() {
+		System.out.println("alpha = " + alpha);
+		System.out.println("beta = " + beta);
+		System.out.println("v = " + v);
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+//				if (x_val[i][j] == 1.)
+//					System.out.println("x_{" + i + "," + j + "} = " + x_val[i][j]);
+//				System.out.println("w_{" + i + "," + j + "} = " + w[i][j]);
+//
+//				System.out.println("subgamma_{" + i + "," + j + "} = " + subgrad_gamma[i][j]);
+//				System.out.println("subdelta{" + i + "," + j + "} = " + subgrad_delta[i][j]);
+//				System.out.println("subeps{" + i + "," + j + "} = " + subgrad_epsilon[i][j]);
+//
+//				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j] + " ");
+//				System.out.print("delta{" + i + "," + j + "} = " + delta[i][j] + " ");
+//				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j] + " ");
+			}
+//			System.out.println();
+		}
+
+//		System.out.println("grad norm " + computeGradientLength());
+//		System.out.println("LB" + bestLb);
+//		System.out.println("UB" + bestUb);
+	}
+
+	private static void updateBounds(IloCplex cplex) throws IloException {
+
+		double lb = cplex.getObjValue();
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++) {
+				lb += (w[j][t] * (alpha / nA - beta / nA - gamma[j][t] + delta[j][t] + epsilon[j][t]));
+				lb -= (d[t] * gamma[j][t]);
+			}
+			for (int j = nA; j < n; j++) {
+				lb += (w[j][t] * (beta / nB - alpha / nB - gamma[j][t] + delta[j][t] + epsilon[j][t]));
+				lb -= (d[t] * gamma[j][t]);
+			}
+		}
+
+		lb += ((Pa / nA) * (alpha - beta));
+
+		lb -= ((Pb / nB) * (alpha - beta));
+
+//		System.out.println(lb);
+		currLB = lb;
+		if (lb > bestLB) {
+			bestLB = lb;
+		}
+
+		// implementare incrementando la somma corrente
+		double completionA = 0, completionB = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++) {
+				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
+					completionA += p[j];
+					for (int l = 0; l < n; l++) {
+						for (int k = 0; k < t; k++) {
+							completionA += p[l] * x_val[l][k];
+						}
+					}
+				} else if (x_val[j][t] > 0)
+					throw new RuntimeException("errore");
+			}
+
+			for (int j = nA; j < n; j++) {
+				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
+					completionB += p[j];
+					for (int l = 0; l < n; l++) {
+						for (int k = 0; k < t; k++) {
+							completionB += p[l] * x_val[l][k];
+						}
+					}
+				}
+			}
+		}
+		double ub = Math.max(completionA / nA - completionB / nB, completionB / nB - completionA / nA);
+//		System.out.println(ub);
+//		System.out.println();
+		currUB = ub;
+		if (ub < bestUB) {
+			// countIter = 0;
+			lastIter = countIter;
+			bestUB = ub;
+		}
+	}
+
+	private static void updateMultipliers() {
+		double gradientLength = computeGradientLength();
+		// System.out.println("Norma = " + Math.sqrt(gradientLength));
+		double factor = (currUB - currLB) / gradientLength;
+//		System.out.println("Passo = " + factor);
+//		System.out.println("---------");
+//		System.out.println();
+
+		alpha = Math.max(0, alpha + subgrad_alpha * factor);
+		beta = Math.max(0, beta + subgrad_beta * factor);
+
+//		if (alpha + beta > 1) {
+//			double sum = alpha + beta;
+//			alpha /= sum;
+//			beta /= sum;
+//		}
+
+		for (int j = 0; j < n; j++)
+			for (int t = 0; t < n; t++) {
+				gamma[j][t] = Math.max(0, gamma[j][t] + subgrad_gamma[j][t] * factor);
+				delta[j][t] = Math.max(0, delta[j][t] + subgrad_delta[j][t] * factor);
+				epsilon[j][t] = Math.max(0, epsilon[j][t] + subgrad_epsilon[j][t] * factor);
+			}
+
+	}
+
+	/*
+	 * invece di ricalcolarla si può calcolare in modo iterativo: se ho x^2 e
+	 * diventa (x+y)^2 posso calcolarla come x^2 +y^2+2xy. Quindi aggiornarla quando
+	 * aggiornarla quando aggiorno il subgrad
+	 */
+	public static double computeGradientLength() {
+		double toReturn = 0;
+		toReturn += Math.pow(subgrad_alpha, 2);
+		toReturn += Math.pow(subgrad_beta, 2);
+		for (int j = 0; j < n; j++)
+			for (int t = 0; t < n; t++) {
+				toReturn += Math.pow(subgrad_gamma[j][t], 2);
+				toReturn += Math.pow(subgrad_delta[j][t], 2);
+				toReturn += Math.pow(subgrad_epsilon[j][t], 2);
+
+			}
+
+		return toReturn;
+	}
+
+	private static void updateSubGrad() {
+
+		subgrad_alpha = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				subgrad_alpha += w[j][t] / nA;
+			for (int j = nA; j < n; j++)
+				subgrad_alpha -= w[j][t] / nB;
+
+		}
+		subgrad_alpha += Pa / nA;
+		subgrad_alpha -= Pb / nB;
+		subgrad_alpha -= v;
+
+		subgrad_beta = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				subgrad_beta -= w[j][t] / nA;
+			for (int j = nA; j < n; j++)
+				subgrad_beta += w[j][t] / nB;
+
+		}
+		subgrad_beta -= Pa / nA;
+		subgrad_beta += Pb / nB;
+		subgrad_beta -= v;
+
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++) {
+				subgrad_gamma[j][t] = d[t] * x_val[j][t];
+				subgrad_gamma[j][t] -= (w[j][t] + d[t]);
+
+				subgrad_delta[j][t] = w[j][t];
+
+				subgrad_epsilon[j][t] = w[j][t] - d[t] * x_val[j][t];
+
+				for (int l = 0; l < n; l++)
+					for (int k = 0; k < t; k++) {
+						subgrad_gamma[j][t] += p[l] * x_val[l][k];
+
+						subgrad_delta[j][t] -= p[l] * x_val[l][k];
+					}
+			}
+
+	}
+
+	private static void updateOptimalWandV(IloCplex cplex, IloNumVar[][] x)
+			throws UnknownObjectException, IloException {
+		for (int i = 0; i < n; i++)
+			x_val[i] = cplex.getValues(x[i]);
+
+		if (1 - alpha - beta >= 0)
+			v = 0;
+		else
+			v = bestUB;// maxBound;
+
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				if (alpha / nA - beta / nA - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
+					w[j][t] = 0.;
+				else
+					w[j][t] = d[t];
+			for (int j = nA; j < n; j++)
+				if (beta / nB - alpha / nB - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
+					w[j][t] = 0.;
+				else
+					w[j][t] = d[t];
+		}
+
+	}
+
+	private static void initParam(Double init) {
+//		System.out.println(init);
+		subgrad_alpha = 0.;
+		subgrad_beta = 0;
+		numIter = 200;
+		countIter = 0;
+		lastIter = 0;
+		bestUB = Double.MAX_VALUE;
+		bestLB = -Double.MAX_VALUE;
+		currUB = null;
+		currLB = null;
+		maxBound = null;
+
+		p = new int[n];
+		d = new double[n];
+		gamma = new double[n][n];
+		delta = new double[n][n];
+		epsilon = new double[n][n];
+		w = new double[n][n];
+		x_val = new double[n][n];
+		subgrad_gamma = new double[n][n];
+		subgrad_delta = new double[n][n];
+		subgrad_epsilon = new double[n][n];
+
+		for (int i = 0; i < nA; i++)
+			p[i] = 1;
+		for (int i = nA; i < n; i++)
+			p[i] = 1;
+
+		Pa = 0;
+		Pb = 0;
+		for (int i = 0; i < nA; i++)
+			Pa += p[i];
+
+		for (int i = nA; i < n; i++)
+			Pb += p[i];
+
+		alpha = init;
+		beta = init;
+
+		for (int i = 0; i < n; i++) {
+			d[i] = i * (Pa + Pb);
+			for (int j = 0; j < n; j++) {
+				gamma[i][j] = init;
+				delta[i][j] = init;
+				epsilon[i][j] = init;
+			}
+		}
+
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:449)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2020-10-21 10:34:15.315
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:449)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2020-10-21 10:34:15.322
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:449)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-10-21 10:34:17.846
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+
+import java.io.File;
+
+import ilog.concert.*;
+import ilog.cplex.*;
+import ilog.cplex.IloCplex.UnknownObjectException;
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.Number;
+
+// controllare con maxBound dinamico
+//1 - aplha - beta parte gia <0
+
+public class LagrangianSolver {
+
+	private static final String EXCEL_FILE_LOCATION = "src\\results\\results.xls";
+	static WritableWorkbook workBook = null;
+	static WritableSheet excelSheet;
+
+	public static double[] d;//
+	public static double alpha, beta, v;
+	public static double[][] gamma, delta, epsilon;
+	public static int p[]; //
+	public static double w[][];
+
+	public static double Pa, Pb;
+	public static double x_val[][];
+
+	public static double subgrad_alpha = 0., subgrad_beta = 0;
+	public static double[][] subgrad_gamma, subgrad_delta, subgrad_epsilon;
+	public static int n, nA, nB;
+	public static int numIter, countIter, lastIter;
+
+	public static Double bestUB = Double.MAX_VALUE, bestLB = -Double.MAX_VALUE, currUB = null, currLB = null,
+			maxBound = null;
+
+	public static void main(String[] args) throws IloException {
+
+		for (n = 50; n < 100; n += 10) {
+			for (nA = n / 2; nA <= n / 2 + 1; nA++) {
+				nB = n - nA;
+				for (int pow = 2; pow <= 5; pow++) {
+
+					initParam(Math.pow(10, pow));
+					computeMaxBound();
+
+					IloCplex cplex = new IloCplex();
+					cplex.setOut(null);
+
+					while (countIter < numIter && bestUB > Math.pow(10, -6)) {
+						// System.out.println(countIter);
+						countIter++;
+
+						IloNumVar[][] x = new IloNumVar[n][];
+						for (int i = 0; i < n; i++)
+							x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+
+						createRelaxationModel(cplex, x, n);
+
+//			System.out.println("START");
+						if (cplex.solve()) {
+//			printMultipliers();
+							updateOptimalWandV(cplex, x);
+							updateSubGrad();
+							updateBounds(cplex);
+							updateMultipliers();
+//				printParam();
+						}
+						cplex.clearModel();
+					}
+					System.out
+							.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = " + Math.pow(10, pow)
+									+ ", N.iter = " + lastIter + " , Obj = " + bestUB + " ," + getExpected(nA, nB));
+				}
+			}
+		}
+	}
+
+	private static String getExpected(int nA, int nB) {
+		double expected = (nA+nB)/(2*nA*nB);
+		return String.valueOf(((nA+nB)(2*nA*nB)));
+	}
+
+	private static void createRelaxationModel(IloCplex cplex, IloNumVar[][] x, int n) throws IloException {
+
+		IloLinearNumExpr fo = cplex.linearNumExpr();
+
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++) {
+				fo.addTerm((gamma[j][t] - epsilon[j][t]) * d[t], x[j][t]);
+				for (int l = 0; l < n; l++)
+					for (int k = 0; k < t; k++) {
+						fo.addTerm((gamma[j][t] - delta[j][t]) * p[l], x[l][k]);
+					}
+			}
+
+		cplex.addMinimize(fo);
+
+		// assignment
+		for (int j = 0; j < n; j++) {
+			cplex.addEq(cplex.sum(x[j]), 1);
+		}
+
+		for (int t = 0; t < n; t++) {
+			IloLinearNumExpr t_th_constraint = cplex.linearNumExpr();
+			for (int j = 0; j < n; j++)
+				t_th_constraint.addTerm(1, x[j][t]);
+			cplex.addEq(1, t_th_constraint);
+		}
+		// end assignment
+	}
+
+	private static void computeMaxBound() {
+
+		double current = 0;
+
+		double sumA = 0, sumB = 0;
+		int countA = 0;
+		int countB = 0;
+
+		for (int i = 0; i < n; i++) {
+			if (countB == nB) {
+				current += p[countA];
+				sumA += current;
+				countA++;
+			} else if (countA == nA) {
+				current += p[nA + countB];
+				sumB += current;
+				countB++;
+			} else if (i % 2 == 0) {
+				current += p[countA];
+				sumA += current;
+				countA++;
+			} else {
+				current += p[nA + countB];
+				sumB += current;
+				countB++;
+			}
+
+		}
+
+		maxBound = Math.max(sumA / nA - sumB / nB, sumB / nB - sumA / nA);
+//		System.out.println("MB" + maxBound);
+
+	}
+
+	private static void printMultipliers() {
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < n; j++) {
+				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j]);
+				System.out.println("delta{" + i + "," + j + "} = " + delta[i][j]);
+				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j]);
+			}
+	}
+
+	private static void printParam() {
+		System.out.println("alpha = " + alpha);
+		System.out.println("beta = " + beta);
+		System.out.println("v = " + v);
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+//				if (x_val[i][j] == 1.)
+//					System.out.println("x_{" + i + "," + j + "} = " + x_val[i][j]);
+//				System.out.println("w_{" + i + "," + j + "} = " + w[i][j]);
+//
+//				System.out.println("subgamma_{" + i + "," + j + "} = " + subgrad_gamma[i][j]);
+//				System.out.println("subdelta{" + i + "," + j + "} = " + subgrad_delta[i][j]);
+//				System.out.println("subeps{" + i + "," + j + "} = " + subgrad_epsilon[i][j]);
+//
+//				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j] + " ");
+//				System.out.print("delta{" + i + "," + j + "} = " + delta[i][j] + " ");
+//				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j] + " ");
+			}
+//			System.out.println();
+		}
+
+//		System.out.println("grad norm " + computeGradientLength());
+//		System.out.println("LB" + bestLb);
+//		System.out.println("UB" + bestUb);
+	}
+
+	private static void updateBounds(IloCplex cplex) throws IloException {
+
+		double lb = cplex.getObjValue();
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++) {
+				lb += (w[j][t] * (alpha / nA - beta / nA - gamma[j][t] + delta[j][t] + epsilon[j][t]));
+				lb -= (d[t] * gamma[j][t]);
+			}
+			for (int j = nA; j < n; j++) {
+				lb += (w[j][t] * (beta / nB - alpha / nB - gamma[j][t] + delta[j][t] + epsilon[j][t]));
+				lb -= (d[t] * gamma[j][t]);
+			}
+		}
+
+		lb += ((Pa / nA) * (alpha - beta));
+
+		lb -= ((Pb / nB) * (alpha - beta));
+
+//		System.out.println(lb);
+		currLB = lb;
+		if (lb > bestLB) {
+			bestLB = lb;
+		}
+
+		// implementare incrementando la somma corrente
+		double completionA = 0, completionB = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++) {
+				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
+					completionA += p[j];
+					for (int l = 0; l < n; l++) {
+						for (int k = 0; k < t; k++) {
+							completionA += p[l] * x_val[l][k];
+						}
+					}
+				} else if (x_val[j][t] > 0)
+					throw new RuntimeException("errore");
+			}
+
+			for (int j = nA; j < n; j++) {
+				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
+					completionB += p[j];
+					for (int l = 0; l < n; l++) {
+						for (int k = 0; k < t; k++) {
+							completionB += p[l] * x_val[l][k];
+						}
+					}
+				}
+			}
+		}
+		double ub = Math.max(completionA / nA - completionB / nB, completionB / nB - completionA / nA);
+//		System.out.println(ub);
+//		System.out.println();
+		currUB = ub;
+		if (ub < bestUB) {
+			// countIter = 0;
+			lastIter = countIter;
+			bestUB = ub;
+		}
+	}
+
+	private static void updateMultipliers() {
+		double gradientLength = computeGradientLength();
+		// System.out.println("Norma = " + Math.sqrt(gradientLength));
+		double factor = (currUB - currLB) / gradientLength;
+//		System.out.println("Passo = " + factor);
+//		System.out.println("---------");
+//		System.out.println();
+
+		alpha = Math.max(0, alpha + subgrad_alpha * factor);
+		beta = Math.max(0, beta + subgrad_beta * factor);
+
+//		if (alpha + beta > 1) {
+//			double sum = alpha + beta;
+//			alpha /= sum;
+//			beta /= sum;
+//		}
+
+		for (int j = 0; j < n; j++)
+			for (int t = 0; t < n; t++) {
+				gamma[j][t] = Math.max(0, gamma[j][t] + subgrad_gamma[j][t] * factor);
+				delta[j][t] = Math.max(0, delta[j][t] + subgrad_delta[j][t] * factor);
+				epsilon[j][t] = Math.max(0, epsilon[j][t] + subgrad_epsilon[j][t] * factor);
+			}
+
+	}
+
+	/*
+	 * invece di ricalcolarla si può calcolare in modo iterativo: se ho x^2 e
+	 * diventa (x+y)^2 posso calcolarla come x^2 +y^2+2xy. Quindi aggiornarla quando
+	 * aggiornarla quando aggiorno il subgrad
+	 */
+	public static double computeGradientLength() {
+		double toReturn = 0;
+		toReturn += Math.pow(subgrad_alpha, 2);
+		toReturn += Math.pow(subgrad_beta, 2);
+		for (int j = 0; j < n; j++)
+			for (int t = 0; t < n; t++) {
+				toReturn += Math.pow(subgrad_gamma[j][t], 2);
+				toReturn += Math.pow(subgrad_delta[j][t], 2);
+				toReturn += Math.pow(subgrad_epsilon[j][t], 2);
+
+			}
+
+		return toReturn;
+	}
+
+	private static void updateSubGrad() {
+
+		subgrad_alpha = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				subgrad_alpha += w[j][t] / nA;
+			for (int j = nA; j < n; j++)
+				subgrad_alpha -= w[j][t] / nB;
+
+		}
+		subgrad_alpha += Pa / nA;
+		subgrad_alpha -= Pb / nB;
+		subgrad_alpha -= v;
+
+		subgrad_beta = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				subgrad_beta -= w[j][t] / nA;
+			for (int j = nA; j < n; j++)
+				subgrad_beta += w[j][t] / nB;
+
+		}
+		subgrad_beta -= Pa / nA;
+		subgrad_beta += Pb / nB;
+		subgrad_beta -= v;
+
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++) {
+				subgrad_gamma[j][t] = d[t] * x_val[j][t];
+				subgrad_gamma[j][t] -= (w[j][t] + d[t]);
+
+				subgrad_delta[j][t] = w[j][t];
+
+				subgrad_epsilon[j][t] = w[j][t] - d[t] * x_val[j][t];
+
+				for (int l = 0; l < n; l++)
+					for (int k = 0; k < t; k++) {
+						subgrad_gamma[j][t] += p[l] * x_val[l][k];
+
+						subgrad_delta[j][t] -= p[l] * x_val[l][k];
+					}
+			}
+
+	}
+
+	private static void updateOptimalWandV(IloCplex cplex, IloNumVar[][] x)
+			throws UnknownObjectException, IloException {
+		for (int i = 0; i < n; i++)
+			x_val[i] = cplex.getValues(x[i]);
+
+		if (1 - alpha - beta >= 0)
+			v = 0;
+		else
+			v = bestUB;// maxBound;
+
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				if (alpha / nA - beta / nA - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
+					w[j][t] = 0.;
+				else
+					w[j][t] = d[t];
+			for (int j = nA; j < n; j++)
+				if (beta / nB - alpha / nB - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
+					w[j][t] = 0.;
+				else
+					w[j][t] = d[t];
+		}
+
+	}
+
+	private static void initParam(Double init) {
+//		System.out.println(init);
+		subgrad_alpha = 0.;
+		subgrad_beta = 0;
+		numIter = 200;
+		countIter = 0;
+		lastIter = 0;
+		bestUB = Double.MAX_VALUE;
+		bestLB = -Double.MAX_VALUE;
+		currUB = null;
+		currLB = null;
+		maxBound = null;
+
+		p = new int[n];
+		d = new double[n];
+		gamma = new double[n][n];
+		delta = new double[n][n];
+		epsilon = new double[n][n];
+		w = new double[n][n];
+		x_val = new double[n][n];
+		subgrad_gamma = new double[n][n];
+		subgrad_delta = new double[n][n];
+		subgrad_epsilon = new double[n][n];
+
+		for (int i = 0; i < nA; i++)
+			p[i] = 1;
+		for (int i = nA; i < n; i++)
+			p[i] = 1;
+
+		Pa = 0;
+		Pb = 0;
+		for (int i = 0; i < nA; i++)
+			Pa += p[i];
+
+		for (int i = nA; i < n; i++)
+			Pb += p[i];
+
+		alpha = init;
+		beta = init;
+
+		for (int i = 0; i < n; i++) {
+			d[i] = i * (Pa + Pb);
+			for (int j = 0; j < n; j++) {
+				gamma[i][j] = init;
+				delta[i][j] = init;
+				epsilon[i][j] = init;
+			}
+		}
+
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:449)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2020-10-21 10:34:17.857
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:449)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2020-10-21 10:34:17.866
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:449)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-10-21 10:34:17.884
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+
+import java.io.File;
+
+import ilog.concert.*;
+import ilog.cplex.*;
+import ilog.cplex.IloCplex.UnknownObjectException;
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.Number;
+
+// controllare con maxBound dinamico
+//1 - aplha - beta parte gia <0
+
+public class LagrangianSolver {
+
+	private static final String EXCEL_FILE_LOCATION = "src\\results\\results.xls";
+	static WritableWorkbook workBook = null;
+	static WritableSheet excelSheet;
+
+	public static double[] d;//
+	public static double alpha, beta, v;
+	public static double[][] gamma, delta, epsilon;
+	public static int p[]; //
+	public static double w[][];
+
+	public static double Pa, Pb;
+	public static double x_val[][];
+
+	public static double subgrad_alpha = 0., subgrad_beta = 0;
+	public static double[][] subgrad_gamma, subgrad_delta, subgrad_epsilon;
+	public static int n, nA, nB;
+	public static int numIter, countIter, lastIter;
+
+	public static Double bestUB = Double.MAX_VALUE, bestLB = -Double.MAX_VALUE, currUB = null, currLB = null,
+			maxBound = null;
+
+	public static void main(String[] args) throws IloException {
+
+		for (n = 50; n < 100; n += 10) {
+			for (nA = n / 2; nA <= n / 2 + 1; nA++) {
+				nB = n - nA;
+				for (int pow = 2; pow <= 5; pow++) {
+
+					initParam(Math.pow(10, pow));
+					computeMaxBound();
+
+					IloCplex cplex = new IloCplex();
+					cplex.setOut(null);
+
+					while (countIter < numIter && bestUB > Math.pow(10, -6)) {
+						// System.out.println(countIter);
+						countIter++;
+
+						IloNumVar[][] x = new IloNumVar[n][];
+						for (int i = 0; i < n; i++)
+							x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+
+						createRelaxationModel(cplex, x, n);
+
+//			System.out.println("START");
+						if (cplex.solve()) {
+//			printMultipliers();
+							updateOptimalWandV(cplex, x);
+							updateSubGrad();
+							updateBounds(cplex);
+							updateMultipliers();
+//				printParam();
+						}
+						cplex.clearModel();
+					}
+					System.out
+							.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = " + Math.pow(10, pow)
+									+ ", N.iter = " + lastIter + " , Obj = " + bestUB + " ," + getExpected(nA, nB));
+				}
+			}
+		}
+	}
+
+	private static String getExpected(int nA, int nB) {
+		double expected = (nA+nB)/(2*nA*nB);
+		return String.valueOf(((nA+nB)(2*nA*nB)));
+	}
+
+	private static void createRelaxationModel(IloCplex cplex, IloNumVar[][] x, int n) throws IloException {
+
+		IloLinearNumExpr fo = cplex.linearNumExpr();
+
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++) {
+				fo.addTerm((gamma[j][t] - epsilon[j][t]) * d[t], x[j][t]);
+				for (int l = 0; l < n; l++)
+					for (int k = 0; k < t; k++) {
+						fo.addTerm((gamma[j][t] - delta[j][t]) * p[l], x[l][k]);
+					}
+			}
+
+		cplex.addMinimize(fo);
+
+		// assignment
+		for (int j = 0; j < n; j++) {
+			cplex.addEq(cplex.sum(x[j]), 1);
+		}
+
+		for (int t = 0; t < n; t++) {
+			IloLinearNumExpr t_th_constraint = cplex.linearNumExpr();
+			for (int j = 0; j < n; j++)
+				t_th_constraint.addTerm(1, x[j][t]);
+			cplex.addEq(1, t_th_constraint);
+		}
+		// end assignment
+	}
+
+	private static void computeMaxBound() {
+
+		double current = 0;
+
+		double sumA = 0, sumB = 0;
+		int countA = 0;
+		int countB = 0;
+
+		for (int i = 0; i < n; i++) {
+			if (countB == nB) {
+				current += p[countA];
+				sumA += current;
+				countA++;
+			} else if (countA == nA) {
+				current += p[nA + countB];
+				sumB += current;
+				countB++;
+			} else if (i % 2 == 0) {
+				current += p[countA];
+				sumA += current;
+				countA++;
+			} else {
+				current += p[nA + countB];
+				sumB += current;
+				countB++;
+			}
+
+		}
+
+		maxBound = Math.max(sumA / nA - sumB / nB, sumB / nB - sumA / nA);
+//		System.out.println("MB" + maxBound);
+
+	}
+
+	private static void printMultipliers() {
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < n; j++) {
+				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j]);
+				System.out.println("delta{" + i + "," + j + "} = " + delta[i][j]);
+				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j]);
+			}
+	}
+
+	private static void printParam() {
+		System.out.println("alpha = " + alpha);
+		System.out.println("beta = " + beta);
+		System.out.println("v = " + v);
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+//				if (x_val[i][j] == 1.)
+//					System.out.println("x_{" + i + "," + j + "} = " + x_val[i][j]);
+//				System.out.println("w_{" + i + "," + j + "} = " + w[i][j]);
+//
+//				System.out.println("subgamma_{" + i + "," + j + "} = " + subgrad_gamma[i][j]);
+//				System.out.println("subdelta{" + i + "," + j + "} = " + subgrad_delta[i][j]);
+//				System.out.println("subeps{" + i + "," + j + "} = " + subgrad_epsilon[i][j]);
+//
+//				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j] + " ");
+//				System.out.print("delta{" + i + "," + j + "} = " + delta[i][j] + " ");
+//				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j] + " ");
+			}
+//			System.out.println();
+		}
+
+//		System.out.println("grad norm " + computeGradientLength());
+//		System.out.println("LB" + bestLb);
+//		System.out.println("UB" + bestUb);
+	}
+
+	private static void updateBounds(IloCplex cplex) throws IloException {
+
+		double lb = cplex.getObjValue();
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++) {
+				lb += (w[j][t] * (alpha / nA - beta / nA - gamma[j][t] + delta[j][t] + epsilon[j][t]));
+				lb -= (d[t] * gamma[j][t]);
+			}
+			for (int j = nA; j < n; j++) {
+				lb += (w[j][t] * (beta / nB - alpha / nB - gamma[j][t] + delta[j][t] + epsilon[j][t]));
+				lb -= (d[t] * gamma[j][t]);
+			}
+		}
+
+		lb += ((Pa / nA) * (alpha - beta));
+
+		lb -= ((Pb / nB) * (alpha - beta));
+
+//		System.out.println(lb);
+		currLB = lb;
+		if (lb > bestLB) {
+			bestLB = lb;
+		}
+
+		// implementare incrementando la somma corrente
+		double completionA = 0, completionB = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++) {
+				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
+					completionA += p[j];
+					for (int l = 0; l < n; l++) {
+						for (int k = 0; k < t; k++) {
+							completionA += p[l] * x_val[l][k];
+						}
+					}
+				} else if (x_val[j][t] > 0)
+					throw new RuntimeException("errore");
+			}
+
+			for (int j = nA; j < n; j++) {
+				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
+					completionB += p[j];
+					for (int l = 0; l < n; l++) {
+						for (int k = 0; k < t; k++) {
+							completionB += p[l] * x_val[l][k];
+						}
+					}
+				}
+			}
+		}
+		double ub = Math.max(completionA / nA - completionB / nB, completionB / nB - completionA / nA);
+//		System.out.println(ub);
+//		System.out.println();
+		currUB = ub;
+		if (ub < bestUB) {
+			// countIter = 0;
+			lastIter = countIter;
+			bestUB = ub;
+		}
+	}
+
+	private static void updateMultipliers() {
+		double gradientLength = computeGradientLength();
+		// System.out.println("Norma = " + Math.sqrt(gradientLength));
+		double factor = (currUB - currLB) / gradientLength;
+//		System.out.println("Passo = " + factor);
+//		System.out.println("---------");
+//		System.out.println();
+
+		alpha = Math.max(0, alpha + subgrad_alpha * factor);
+		beta = Math.max(0, beta + subgrad_beta * factor);
+
+//		if (alpha + beta > 1) {
+//			double sum = alpha + beta;
+//			alpha /= sum;
+//			beta /= sum;
+//		}
+
+		for (int j = 0; j < n; j++)
+			for (int t = 0; t < n; t++) {
+				gamma[j][t] = Math.max(0, gamma[j][t] + subgrad_gamma[j][t] * factor);
+				delta[j][t] = Math.max(0, delta[j][t] + subgrad_delta[j][t] * factor);
+				epsilon[j][t] = Math.max(0, epsilon[j][t] + subgrad_epsilon[j][t] * factor);
+			}
+
+	}
+
+	/*
+	 * invece di ricalcolarla si può calcolare in modo iterativo: se ho x^2 e
+	 * diventa (x+y)^2 posso calcolarla come x^2 +y^2+2xy. Quindi aggiornarla quando
+	 * aggiornarla quando aggiorno il subgrad
+	 */
+	public static double computeGradientLength() {
+		double toReturn = 0;
+		toReturn += Math.pow(subgrad_alpha, 2);
+		toReturn += Math.pow(subgrad_beta, 2);
+		for (int j = 0; j < n; j++)
+			for (int t = 0; t < n; t++) {
+				toReturn += Math.pow(subgrad_gamma[j][t], 2);
+				toReturn += Math.pow(subgrad_delta[j][t], 2);
+				toReturn += Math.pow(subgrad_epsilon[j][t], 2);
+
+			}
+
+		return toReturn;
+	}
+
+	private static void updateSubGrad() {
+
+		subgrad_alpha = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				subgrad_alpha += w[j][t] / nA;
+			for (int j = nA; j < n; j++)
+				subgrad_alpha -= w[j][t] / nB;
+
+		}
+		subgrad_alpha += Pa / nA;
+		subgrad_alpha -= Pb / nB;
+		subgrad_alpha -= v;
+
+		subgrad_beta = 0;
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				subgrad_beta -= w[j][t] / nA;
+			for (int j = nA; j < n; j++)
+				subgrad_beta += w[j][t] / nB;
+
+		}
+		subgrad_beta -= Pa / nA;
+		subgrad_beta += Pb / nB;
+		subgrad_beta -= v;
+
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++) {
+				subgrad_gamma[j][t] = d[t] * x_val[j][t];
+				subgrad_gamma[j][t] -= (w[j][t] + d[t]);
+
+				subgrad_delta[j][t] = w[j][t];
+
+				subgrad_epsilon[j][t] = w[j][t] - d[t] * x_val[j][t];
+
+				for (int l = 0; l < n; l++)
+					for (int k = 0; k < t; k++) {
+						subgrad_gamma[j][t] += p[l] * x_val[l][k];
+
+						subgrad_delta[j][t] -= p[l] * x_val[l][k];
+					}
+			}
+
+	}
+
+	private static void updateOptimalWandV(IloCplex cplex, IloNumVar[][] x)
+			throws UnknownObjectException, IloException {
+		for (int i = 0; i < n; i++)
+			x_val[i] = cplex.getValues(x[i]);
+
+		if (1 - alpha - beta >= 0)
+			v = 0;
+		else
+			v = bestUB;// maxBound;
+
+		for (int t = 0; t < n; t++) {
+			for (int j = 0; j < nA; j++)
+				if (alpha / nA - beta / nA - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
+					w[j][t] = 0.;
+				else
+					w[j][t] = d[t];
+			for (int j = nA; j < n; j++)
+				if (beta / nB - alpha / nB - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
+					w[j][t] = 0.;
+				else
+					w[j][t] = d[t];
+		}
+
+	}
+
+	private static void initParam(Double init) {
+//		System.out.println(init);
+		subgrad_alpha = 0.;
+		subgrad_beta = 0;
+		numIter = 200;
+		countIter = 0;
+		lastIter = 0;
+		bestUB = Double.MAX_VALUE;
+		bestLB = -Double.MAX_VALUE;
+		currUB = null;
+		currLB = null;
+		maxBound = null;
+
+		p = new int[n];
+		d = new double[n];
+		gamma = new double[n][n];
+		delta = new double[n][n];
+		epsilon = new double[n][n];
+		w = new double[n][n];
+		x_val = new double[n][n];
+		subgrad_gamma = new double[n][n];
+		subgrad_delta = new double[n][n];
+		subgrad_epsilon = new double[n][n];
+
+		for (int i = 0; i < nA; i++)
+			p[i] = 1;
+		for (int i = nA; i < n; i++)
+			p[i] = 1;
+
+		Pa = 0;
+		Pb = 0;
+		for (int i = 0; i < nA; i++)
+			Pa += p[i];
+
+		for (int i = nA; i < n; i++)
+			Pb += p[i];
+
+		alpha = init;
+		beta = init;
+
+		for (int i = 0; i < n; i++) {
+			d[i] = i * (Pa + Pb);
+			for (int j = 0; j < n; j++) {
+				gamma[i][j] = init;
+				delta[i][j] = init;
+				epsilon[i][j] = init;
+			}
+		}
+
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:167)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-10-21 10:34:17.896
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:167)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-10-21 10:34:17.907
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2422)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2032)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2903)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:167)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
