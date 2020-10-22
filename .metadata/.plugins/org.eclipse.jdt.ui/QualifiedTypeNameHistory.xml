@@ -14,7 +14,7 @@
     <fullyQualifiedTypeName name="jxl.Workbook"/>
     <fullyQualifiedTypeName name="java.awt.Label"/>
     <fullyQualifiedTypeName name="jxl.write.Label"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="jxl.write.WriteException"/>
     <fullyQualifiedTypeName name="com.sun.jmx.mbeanserver.SunJmxMBeanServer"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
 </qualifiedTypeNameHistroy>

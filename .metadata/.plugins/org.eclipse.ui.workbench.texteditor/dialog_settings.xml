@@ -5,16 +5,21 @@
 		<item key="DIALOG_Y_ORIGIN" value="505"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="init"/>
+		<item key="selection" value="computeMax"/>
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="false"/>
+		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="computeMax"/>
+			<item value="computeMxa"/>
+			<item value="Pa/nA"/>
+			<item value="initPar"/>
+			<item value="MB"/>
+			<item value="initParam"/>
 			<item value="init"/>
 			<item value="v = "/>
-			<item value="computeMax"/>
 			<item value="computeMx"/>
 			<item value="computeM"/>
 			<item value="maxBo"/>
@@ -22,11 +27,6 @@
 			<item value="getExp"/>
 			<item value="max"/>
 			<item value="initPa"/>
-			<item value="System.out"/>
-			<item value="initParam"/>
-			<item value="initPar"/>
-			<item value="norma"/>
-			<item value="integ"/>
 		</list>
 		<list key="replacehistory">
 		</list>
