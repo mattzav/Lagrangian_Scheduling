@@ -2,6 +2,7 @@ package LagrangianSolver;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 import ilog.concert.*;
 import ilog.cplex.*;
@@ -18,7 +19,7 @@ import jxl.write.WriteException;
 
 public class LagrangianSolver {
 
-	private static final String EXCEL_FILE_LOCATION = "src\\results\\results-.xls";
+	private static final String EXCEL_FILE_LOCATION = "src\\results\\lambda = ";
 	static WritableWorkbook workBook = null;
 	static WritableSheet excelSheet;
 
@@ -31,64 +32,88 @@ public class LagrangianSolver {
 	public static double Pa, Pb;
 	public static double x_val[][];
 
+	public static double subgradientLength;
 	public static double subgrad_alpha = 0., subgrad_beta = 0;
 	public static double[][] subgrad_gamma, subgrad_delta, subgrad_epsilon;
 	public static int n, nA, nB;
 	public static int numIter, countIter, lastIter;
 
+	public static long start, timeToBest;
+	public static double timeLimit;
+	public static int seed = 251;
+	public static Random r;
+
 	public static double bestUB = Double.MAX_VALUE, bestLB = -Double.MAX_VALUE, currUB, currLB, maxBound;
 
+	// CPLEX FUORI
 	public static void main(String[] args) throws IloException {
 
-		createExcelFile();
-		int excelRow = 1;
+		r = new Random();
 
-		for (n = 200; n < 210; n += 10) {
-			for (nA = n / 2 - 1; nA <= n / 2; nA++) {
-				nB = n - nA;
-				for (int pow = 1; pow <= 5; pow++) {
+		// create CPLEX environment
+		IloCplex cplex = new IloCplex();
+		cplex.setOut(null);
 
-					initParam(Math.pow(10, pow));
-					computeMaxBound();
+		for (int pow = 0; pow <= 0; pow++) {
+			for (nA = 20; nA <= 50; nA += 10) {
+				for (nB = nA + 10; nB <= nA + 30; nB += 10) {
+					n = nA + nB;
 
-					IloCplex cplex = new IloCplex();
-					cplex.setOut(null);
+					// create Excel file
+					createExcelFile(pow, nA, nB);
+					int excelRow = 1;
 
-					while (countIter < numIter && (Math.abs(bestUB - getExpected(nA, nB)) > Math.pow(10, -6))) {
-						System.out.println(countIter);
-						countIter++;
+					for (int scenario = 0; scenario < 50; scenario++) {
 
-						IloNumVar[][] x = new IloNumVar[n][];
-						for (int i = 0; i < n; i++)
-							x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+						initParam(Math.pow(10, pow)); // init parameters
 
-						createRelaxationModel(cplex, x, n);
+						computeMaxBound(); // compute an upper bound on the value of V
 
-//			System.out.println("START");
-						if (cplex.solve()) {
-//			printMultipliers();
-							updateOptimalWandV(cplex, x);
-							updateSubGrad();
-							updateBounds(cplex);
-							updateMultipliers();
-//				printParam();
+						start = System.currentTimeMillis();
+
+						while (countIter < numIter && Math.abs(bestUB) > Math.pow(10, -6)
+								&& (System.currentTimeMillis() - start) / 1000 < 3600) {
+
+							countIter++;
+
+							// create binary x variables
+							IloNumVar[][] x = new IloNumVar[n][];
+							for (int i = 0; i < n; i++)
+								x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+
+							createRelaxationModel(cplex, x, n); // create the relaxation model
+
+							if (cplex.solve()) {
+								// printMultipliers();
+
+								computeOptimalWandV(cplex, x); // compute the optimal value of W and V w.r.t. x
+								computeSubGrad(); // compute the value of subgradient
+								updateBounds(cplex); // update current/best lower/upper bound
+								updateMultipliers(); // update multipliers
+
+								// printParam();
+							}
+							cplex.clearModel();
 						}
-						cplex.clearModel();
-					}
-					// add to file excel the resulting time
-					addValueToExcelFile(excelRow, nA, nB, Math.pow(10, pow), lastIter, bestUB, getExpected(nA, nB));
-					excelRow++;
 
-					System.out
-							.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = " + Math.pow(10, pow)
-									+ ", N.iter = " + lastIter + " , Obj = " + bestUB + " ," + getExpected(nA, nB));
+						long timeToExit = System.currentTimeMillis() - start;
+
+						// add to file Excel the results
+						addValueToExcelFile(excelRow, nA, nB, Math.pow(10, pow), lastIter, bestUB, timeToExit);
+						excelRow++;
+
+						System.out.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = "
+								+ Math.pow(10, pow) + ", N.iter = " + lastIter + " , Obj = " + bestUB + " ,"
+								+ (double) timeToBest / 1000 + ", " + (double) timeToExit / 1000 + ", " + (seed - 1));
+					}
+
+					// close excel file
+					closeExcelFile();
 				}
 			}
-			// add 3 row to leave space between group having different value of n
-			excelRow += 3;
+			seed = 1;
 		}
-		// close excel file
-		closeExcelFile();
+
 	}
 
 	private static void closeExcelFile() {
@@ -105,7 +130,7 @@ public class LagrangianSolver {
 	}
 
 	private static void addValueToExcelFile(int excelRow, int nA, int nB, double lambda, int lastIter, double bestUB,
-			double expected) {
+			long timeToExit) {
 		try {
 
 			Number number = new Number(0, excelRow, nA);
@@ -124,20 +149,38 @@ public class LagrangianSolver {
 			excelSheet.addCell(number);
 
 			String optimum = "YES";
-			if (Math.abs(bestUB - expected) > Math.pow(10, -6))
-				optimum = "NO";
+			if (Math.abs(bestUB) > Math.pow(10, -6))
+				optimum = "-";
 
 			Label label = new Label(5, excelRow, optimum);
 			excelSheet.addCell(label);
+
+			number = new Number(6, excelRow, (double) timeToBest / 1000);
+			excelSheet.addCell(number);
+
+			number = new Number(7, excelRow, (double) timeToExit / 1000);
+			excelSheet.addCell(number);
+
+			number = new Number(8, excelRow, seed - 1);
+			excelSheet.addCell(number);
+
+			for (int i = 15; i < 15 + n; i++)
+				excelSheet.addCell(new Number(i, excelRow, p[i - 15]));
 
 		} catch (Exception e) {
 			throw new RuntimeException("Error adding excel value");
 		}
 	}
 
-	private static void createExcelFile() {
+	private static void createExcelFile(int pow, int nA, int nB) {
 		try {
-			workBook = Workbook.createWorkbook(new File(EXCEL_FILE_LOCATION));
+			String path = EXCEL_FILE_LOCATION + String.valueOf((int) Math.pow(10, pow)) + "\\" + nA + "_" + nB + ".xls";
+			System.out.println("\n \n");
+			System.out.println("-----------------------------------");
+			System.out.println("PATH = " + path);
+			System.out.println();
+
+			workBook = Workbook.createWorkbook(new File(path));
 
 			// create an Excel sheet
 			excelSheet = workBook.createSheet("Lagrangian Results", 0);
@@ -155,10 +198,19 @@ public class LagrangianSolver {
 			label = new Label(3, 0, "N. Iter");
 			excelSheet.addCell(label);
 
-			label = new Label(3, 0, "Best UB");
+			label = new Label(4, 0, "Best UB");
 			excelSheet.addCell(label);
 
-			label = new Label(3, 0, "Optimum");
+			label = new Label(5, 0, "Optimum");
+			excelSheet.addCell(label);
+
+			label = new Label(6, 0, "Time To Best");
+			excelSheet.addCell(label);
+
+			label = new Label(7, 0, "Time To Exit");
+			excelSheet.addCell(label);
+
+			label = new Label(8, 0, "Seed");
 			excelSheet.addCell(label);
 
 		} catch (Exception e) {
@@ -167,27 +219,29 @@ public class LagrangianSolver {
 
 	}
 
-	private static double getExpected(int nA, int nB) {
-		double expected = -1;
-		if (nA % 2 == 0 || nB % 2 == 0)
-			expected = 0;
-		else
-			expected = ((double) (nA + nB)) / (2 * nA * nB);
-		return expected;
-	}
-
 	private static void createRelaxationModel(IloCplex cplex, IloNumVar[][] x, int n) throws IloException {
 
 		IloLinearNumExpr fo = cplex.linearNumExpr();
 
+		double coefficients[][] = new double[n][n];
+
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < n; j++)
+				coefficients[i][j] = 0.;
+
+		// perche se inverto i due for cambia il risultato ?
 		for (int t = 0; t < n; t++)
 			for (int j = 0; j < n; j++) {
-				fo.addTerm((gamma[j][t] - epsilon[j][t]) * d[t], x[j][t]);
+				coefficients[j][t] += ((gamma[j][t] - epsilon[j][t]) * d[t]);
 				for (int l = 0; l < n; l++)
 					for (int k = 0; k < t; k++) {
-						fo.addTerm((gamma[j][t] - delta[j][t]) * p[l], x[l][k]);
+						coefficients[l][k] += ((gamma[j][t] - delta[j][t]) * p[l]);
 					}
 			}
+
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++)
+				fo.addTerm(coefficients[t][j], x[t][j]);
 
 		cplex.addMinimize(fo);
 
@@ -235,7 +289,6 @@ public class LagrangianSolver {
 		}
 
 		maxBound = Math.max(sumA / nA - sumB / nB, sumB / nB - sumA / nA);
-	//	System.out.println("MB" + maxBound);
 
 	}
 
@@ -249,11 +302,11 @@ public class LagrangianSolver {
 	}
 
 	private static void printParam() {
-		System.out.println("alpha = " + alpha);
-		System.out.println("beta = " + beta);
-		System.out.println("v = " + v);
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
+//		System.out.println("alpha = " + alpha);
+//		System.out.println("beta = " + beta);
+//		System.out.println("v = " + v);
+//		for (int i = 0; i < n; i++) {
+//			for (int j = 0; j < n; j++) {
 //				if (x_val[i][j] == 1.)
 //					System.out.println("x_{" + i + "," + j + "} = " + x_val[i][j]);
 //				System.out.println("w_{" + i + "," + j + "} = " + w[i][j]);
@@ -265,9 +318,9 @@ public class LagrangianSolver {
 //				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j] + " ");
 //				System.out.print("delta{" + i + "," + j + "} = " + delta[i][j] + " ");
 //				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j] + " ");
-			}
+//			}
 //			System.out.println();
-		}
+//		}
 
 //		System.out.println("grad norm " + computeGradientLength());
 //		System.out.println("LB" + bestLb);
@@ -292,65 +345,39 @@ public class LagrangianSolver {
 
 		lb -= ((Pb / nB) * (alpha - beta));
 
-//		System.out.println(lb);
 		currLB = lb;
 		if (lb > bestLB) {
 			bestLB = lb;
 		}
 
-		// implementare incrementando la somma corrente
 		double completionA = 0, completionB = 0;
-		for (int t = 0; t < n; t++) {
-			for (int j = 0; j < nA; j++) {
-				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
-					completionA += p[j];
-					for (int l = 0; l < n; l++) {
-						for (int k = 0; k < t; k++) {
-							completionA += p[l] * x_val[l][k];
-						}
-					}
-				} else if (x_val[j][t] > 0)
-					throw new RuntimeException("errore");
-			}
+		double current = 0;
 
-			for (int j = nA; j < n; j++) {
-				if (x_val[j][t] == 1.) {// controllare che non ci siano problemi di approssimazione
-					completionB += p[j];
-					for (int l = 0; l < n; l++) {
-						for (int k = 0; k < t; k++) {
-							completionB += p[l] * x_val[l][k];
-						}
-					}
+		for (int t = 0; t < n; t++)
+			for (int j = 0; j < n; j++)
+				if (x_val[j][t] >= 1 - Math.pow(10, -6)) {
+					current += p[j];
+					if (j < nA)
+						completionA += current;
+					else
+						completionB += current;
+					break;
 				}
-			}
-		}
+
 		double ub = Math.max(completionA / nA - completionB / nB, completionB / nB - completionA / nA);
-//		System.out.println(ub);
-//		System.out.println();
 		currUB = ub;
 		if (ub < bestUB) {
-			// countIter = 0;
 			lastIter = countIter;
 			bestUB = ub;
+			timeToBest = System.currentTimeMillis() - start;
 		}
 	}
 
 	private static void updateMultipliers() {
-		double gradientLength = computeGradientLength();
-		// System.out.println("Norma = " + Math.sqrt(gradientLength));
-		double factor = (currUB - currLB) / gradientLength;
-//		System.out.println("Passo = " + factor);
-//		System.out.println("---------");
-//		System.out.println();
+		double factor = (currUB - currLB) / subgradientLength;
 
 		alpha = Math.max(0, alpha + subgrad_alpha * factor);
 		beta = Math.max(0, beta + subgrad_beta * factor);
-
-//		if (alpha + beta > 1) {
-//			double sum = alpha + beta;
-//			alpha /= sum;
-//			beta /= sum;
-//		}
 
 		for (int j = 0; j < n; j++)
 			for (int t = 0; t < n; t++) {
@@ -361,54 +388,25 @@ public class LagrangianSolver {
 
 	}
 
-	/*
-	 * invece di ricalcolarla si può calcolare in modo iterativo: se ho x^2 e
-	 * diventa (x+y)^2 posso calcolarla come x^2 +y^2+2xy. Quindi aggiornarla quando
-	 * aggiornarla quando aggiorno il subgrad
-	 */
-	public static double computeGradientLength() {
-		double toReturn = 0;
-		toReturn += Math.pow(subgrad_alpha, 2);
-		toReturn += Math.pow(subgrad_beta, 2);
-		for (int j = 0; j < n; j++)
-			for (int t = 0; t < n; t++) {
-				toReturn += Math.pow(subgrad_gamma[j][t], 2);
-				toReturn += Math.pow(subgrad_delta[j][t], 2);
-				toReturn += Math.pow(subgrad_epsilon[j][t], 2);
-
-			}
-
-		return toReturn;
-	}
-
-	private static void updateSubGrad() {
+	private static void computeSubGrad() {
 
 		subgrad_alpha = 0;
-		for (int t = 0; t < n; t++) {
-			for (int j = 0; j < nA; j++)
-				subgrad_alpha += w[j][t] / nA;
-			for (int j = nA; j < n; j++)
-				subgrad_alpha -= w[j][t] / nB;
-
-		}
-		subgrad_alpha += Pa / nA;
-		subgrad_alpha -= Pb / nB;
-		subgrad_alpha -= v;
-
 		subgrad_beta = 0;
+
+		subgradientLength = 0;
+
+		double toAdd = 0;
 		for (int t = 0; t < n; t++) {
-			for (int j = 0; j < nA; j++)
-				subgrad_beta -= w[j][t] / nA;
-			for (int j = nA; j < n; j++)
-				subgrad_beta += w[j][t] / nB;
-
-		}
-		subgrad_beta -= Pa / nA;
-		subgrad_beta += Pb / nB;
-		subgrad_beta -= v;
-
-		for (int t = 0; t < n; t++)
 			for (int j = 0; j < n; j++) {
+
+				if (j < nA) {
+					subgrad_alpha += w[j][t] / nA;
+					subgrad_beta -= w[j][t] / nA;
+				} else {
+					subgrad_alpha -= w[j][t] / nB;
+					subgrad_beta += w[j][t] / nB;
+				}
+
 				subgrad_gamma[j][t] = d[t] * x_val[j][t];
 				subgrad_gamma[j][t] -= (w[j][t] + d[t]);
 
@@ -416,17 +414,34 @@ public class LagrangianSolver {
 
 				subgrad_epsilon[j][t] = w[j][t] - d[t] * x_val[j][t];
 
-				for (int l = 0; l < n; l++)
-					for (int k = 0; k < t; k++) {
-						subgrad_gamma[j][t] += p[l] * x_val[l][k];
+				subgrad_gamma[j][t] += toAdd;
 
-						subgrad_delta[j][t] -= p[l] * x_val[l][k];
-					}
+				subgrad_delta[j][t] -= toAdd;
+
+				subgradientLength += Math.pow(subgrad_gamma[j][t], 2);
+				subgradientLength += Math.pow(subgrad_delta[j][t], 2);
+				subgradientLength += Math.pow(subgrad_epsilon[j][t], 2);
+
 			}
+			for (int l = 0; l < n; l++)
+				if (x_val[l][t] == 1.)
+					toAdd += p[l];
 
+		}
+
+		subgrad_alpha += Pa / nA;
+		subgrad_alpha -= Pb / nB;
+		subgrad_alpha -= v;
+
+		subgrad_beta -= Pa / nA;
+		subgrad_beta += Pb / nB;
+		subgrad_beta -= v;
+
+		subgradientLength += Math.pow(subgrad_alpha, 2);
+		subgradientLength += Math.pow(subgrad_beta, 2);
 	}
 
-	private static void updateOptimalWandV(IloCplex cplex, IloNumVar[][] x)
+	private static void computeOptimalWandV(IloCplex cplex, IloNumVar[][] x)
 			throws UnknownObjectException, IloException {
 		for (int i = 0; i < n; i++)
 			x_val[i] = cplex.getValues(x[i]);
@@ -435,8 +450,6 @@ public class LagrangianSolver {
 			v = 0;
 		else
 			v = maxBound;
-
-//		System.out.println("V" + v);
 
 		for (int t = 0; t < n; t++) {
 			for (int j = 0; j < nA; j++)
@@ -454,10 +467,13 @@ public class LagrangianSolver {
 	}
 
 	private static void initParam(Double init) {
-//		System.out.println(init);
+
 		subgrad_alpha = 0.;
 		subgrad_beta = 0;
-		numIter = 3000;
+		numIter = 50000;
+		timeLimit = 3600;
+		subgradientLength = 0;
+
 		countIter = 0;
 		lastIter = 0;
 		bestUB = Double.MAX_VALUE;
@@ -477,10 +493,12 @@ public class LagrangianSolver {
 		subgrad_delta = new double[n][n];
 		subgrad_epsilon = new double[n][n];
 
-		for (int i = 0; i < nA; i++)
-			p[i] = 1;
-		for (int i = nA; i < n; i++)
-			p[i] = 1;
+		r.setSeed(seed);
+		seed++;
+
+		for (int i = 0; i < n; i++) {
+			p[i] = r.nextInt(25) + 1;
+		}
 
 		Pa = 0;
 		Pb = 0;
@@ -490,6 +508,7 @@ public class LagrangianSolver {
 		for (int i = nA; i < n; i++)
 			Pb += p[i];
 
+		System.out.println(init);
 		alpha = init;
 		beta = init;
 

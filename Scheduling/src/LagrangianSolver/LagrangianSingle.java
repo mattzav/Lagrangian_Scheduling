@@ -1,5 +1,7 @@
 package LagrangianSolver;
 
+import java.util.Random;
+
 import ilog.concert.*;
 import ilog.cplex.*;
 import ilog.cplex.IloCplex.UnknownObjectException;
@@ -16,7 +18,7 @@ public class LagrangianSingle {
 	public static int p[]; //
 	public static double w[][];
 
-	public static int n = 120, nA = 60, nB = 60;
+	public static int n = 28, nA = 14, nB = 14;
 	public static double init = 100;
 
 	public static double Pa, Pb;
@@ -24,7 +26,7 @@ public class LagrangianSingle {
 
 	public static double subgrad_alpha = 0., subgrad_beta = 0;
 	public static double[][] subgrad_gamma, subgrad_delta, subgrad_epsilon;
-	public static int numIter = 200, countIter = 0, lastIter = 0;
+	public static int numIter = 1000, countIter = 0, lastIter = 0;
 
 	public static Double bestUB = Double.MAX_VALUE, bestLB = -Double.MAX_VALUE, currUB, currLB, maxBound;
 
@@ -37,7 +39,7 @@ public class LagrangianSingle {
 		cplex.setOut(null);
 
 		while (countIter < numIter && (Math.abs(bestUB - getExpected(nA, nB)) > Math.pow(10, -6))) {
-//						System.out.println(countIter);
+			System.out.println(countIter);
 			countIter++;
 
 			IloNumVar[][] x = new IloNumVar[n][];
@@ -45,7 +47,7 @@ public class LagrangianSingle {
 				x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
 
 			createRelaxationModel(cplex, x, n);
-
+//			cplex.exportModel("single.lp");
 //			System.out.println("START");
 			if (cplex.solve()) {
 				// printMultipliers();
@@ -53,7 +55,7 @@ public class LagrangianSingle {
 				updateSubGrad();
 				updateBounds(cplex);
 				updateMultipliers();
-				printParam();
+//				printParam();
 			}
 			cplex.clearModel();
 			System.out.println("Iter " + countIter + ", currUb " + currUB + ", currLb " + currLB);
@@ -73,15 +75,20 @@ public class LagrangianSingle {
 
 		IloLinearNumExpr fo = cplex.linearNumExpr();
 
+		// perche se inverto i due for cambia il risultato ?
 		for (int t = 0; t < n; t++)
 			for (int j = 0; j < n; j++) {
 				fo.addTerm((gamma[j][t] - epsilon[j][t]) * d[t], x[j][t]);
 				for (int l = 0; l < n; l++)
 					for (int k = 0; k < t; k++) {
 						fo.addTerm((gamma[j][t] - delta[j][t]) * p[l], x[l][k]);
+//						if (l == 4 && k == 6)
+//							System.out.println(
+//									"(gamma_{" + j + "," + t + "} - delta_{" + j + "," + t + "})*p_{" + l + "}");
 					}
 			}
 
+		// System.out.println(fo);
 		cplex.addMinimize(fo);
 
 		// assignment
@@ -115,7 +122,7 @@ public class LagrangianSingle {
 				current += p[nA + countB];
 				sumB += current;
 				countB++;
-			} else if (i % 2 == 1) {
+			} else if (i % 2 == 0) {
 				current += p[countA];
 				sumA += current;
 				countA++;
@@ -128,7 +135,7 @@ public class LagrangianSingle {
 		}
 
 		maxBound = Math.max(sumA / nA - sumB / nB, sumB / nB - sumA / nA);
-		System.out.println(maxBound);
+//		System.out.println(maxBound);
 	}
 
 	private static void printMultipliers() {
@@ -358,11 +365,17 @@ public class LagrangianSingle {
 		subgrad_delta = new double[n][n];
 		subgrad_epsilon = new double[n][n];
 
-		for (int i = 0; i < nA; i++)
-			p[i] = 1;
-		for (int i = nA; i < n; i++)
-			p[i] = 1;
+		Random r = new Random();
+		r.setSeed(24);
 
+		for (int i = 0; i < nA; i++) {
+			p[i] = r.nextInt(2050);
+			System.out.println(p[i]);
+		}
+		for (int i = nA; i < n; i++) {
+			p[i] = r.nextInt(2050);
+			System.out.println(p[i]);
+		}
 		Pa = 0;
 		Pb = 0;
 		for (int i = 0; i < nA; i++)
