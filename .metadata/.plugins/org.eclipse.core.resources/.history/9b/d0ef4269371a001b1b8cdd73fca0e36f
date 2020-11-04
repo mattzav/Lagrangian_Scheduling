@@ -1,0 +1,12 @@
+
+public class Ex {
+
+	public static void main(String[] args) {
+
+	}
+
+	public static int maxSubArray(int[] nums) {
+
+		return 0;
+	}
+}

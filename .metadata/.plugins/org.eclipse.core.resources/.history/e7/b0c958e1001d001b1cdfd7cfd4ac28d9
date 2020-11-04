@@ -1,0 +1,17 @@
+public class Solution {
+
+	public static void main(String[] args) {
+
+	}
+
+	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+		int first = 0, second = 0;
+		while (true) {
+			if (nums1[first] > nums2[second])
+				second++;
+			else
+				first++;
+		}
+		return 0;
+	}
+}

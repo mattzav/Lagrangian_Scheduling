@@ -1,0 +1,24 @@
+
+public class Ex {
+
+	public static void main(String[] args) {
+		int a[] = new int[] {1};
+		System.out.println(maxSubArray(a));
+	}
+
+	public static int maxSubArray(int[] nums) {
+
+		int best = nums[nums.length - 1];
+		int currSum = best;
+		for (int it = nums.length - 2; it >= 0; it--)
+			if (nums[it] + currSum > 0) {
+				currSum = nums[it] + currSum;
+				if (currSum > best)
+					best = currSum;
+			} else {
+				currSum = 0;
+			}
+		return best;
+
+	}
+}
