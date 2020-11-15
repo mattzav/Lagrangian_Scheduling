@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
-import javax.management.RuntimeErrorException;
-
 import ilog.concert.*;
 import ilog.cplex.*;
 import ilog.cplex.IloCplex.UnknownObjectException;
@@ -16,11 +14,9 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
-
-// se la condizione non è verificata, prendere come UB il migliore corrente
 public class LagrangianWeightedLocalSearch {
 
-	private static final String EXCEL_FILE_LOCATION = "C:\\Users\\Matte\\Dropbox\\Scheduling\\Job diversi\\Articolo\\Risultati Numerici\\lambda = ";
+	private static final String EXCEL_FILE_LOCATION = "C:\\Users\\Matte\\Dropbox\\Scheduling\\Job diversi\\Articolo\\Risultati Numerici\\Weighted\\lambda = ";
 	static WritableWorkbook workBook = null;
 	static WritableSheet excelSheet;
 
@@ -42,7 +38,7 @@ public class LagrangianWeightedLocalSearch {
 
 	public static long start, timeToBest;
 	public static double timeLimit;
-	public static int seed = 201;
+	public static int seed = 1;
 
 	public static double sumA, sumB;
 
@@ -50,6 +46,8 @@ public class LagrangianWeightedLocalSearch {
 
 	public static double bestUB = Double.MAX_VALUE, bestLB = -Double.MAX_VALUE, currUB, currLB, maxBound;
 	public static int[] currentSolution;
+
+	public static int condition;
 
 	public static void main(String[] args) {
 
@@ -62,13 +60,14 @@ public class LagrangianWeightedLocalSearch {
 
 			cplex.setOut(null);
 
-			for (int pow = 1; pow <= 1; pow++) {
-				for (nA = 25; nA <= 25; nA += 10) {
-					for (nB = nA - 1; nB <= nA - 1; nB += 10) {
+			for (int pow = 1; pow <= 4; pow++) {
+				for (nA = 10; nA <= 40; nA += 10) {
+					for (nB = nA; nB <= nA + 30; nB += 10) {
+
 						n = nA + nB;
 
 						// create Excel file
-//						createExcelFile(pow, nA, nB);
+						createExcelFile(pow, nA, nB);
 						int excelRow = 1;
 
 						// create binary x variables
@@ -76,7 +75,7 @@ public class LagrangianWeightedLocalSearch {
 						for (int i = 0; i < n; i++)
 							x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
 
-						for (int scenario = 0; scenario < 1; scenario++) {
+						for (int scenario = 0; scenario < 50; scenario++) {
 
 							initParam(Math.pow(10, pow)); // init parameters
 
@@ -85,7 +84,7 @@ public class LagrangianWeightedLocalSearch {
 							computeMaxBound(); // compute an upper bound on the value of V
 
 							while (Math.abs(bestUB) > Math.pow(10, -6)
-									&& (System.currentTimeMillis() - start) / 1000 < 3600) {
+									&& (System.currentTimeMillis() - start) / 1000 < timeLimit) {
 
 								countIter++;
 
@@ -109,7 +108,7 @@ public class LagrangianWeightedLocalSearch {
 							long timeToExit = System.currentTimeMillis() - start;
 
 							// add to file Excel the results
-//							addValueToExcelFile(excelRow, nA, nB, Math.pow(10, pow), lastIter, bestUB, timeToExit);
+							addValueToExcelFile(excelRow, Math.pow(10, pow), timeToExit);
 							excelRow++;
 
 							System.out.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = "
@@ -122,10 +121,10 @@ public class LagrangianWeightedLocalSearch {
 						closeExcelFile();
 					}
 				}
-				seed = 201;
+				seed = 1;
 			}
 		} catch (IloException e) {
-			System.out.println("MAIN ERROR");
+			System.err.println("MAIN ERROR");
 			e.printStackTrace();
 		}
 
@@ -133,22 +132,22 @@ public class LagrangianWeightedLocalSearch {
 
 	private static void improveSolution() {
 
-		System.out.println("BEFORE SEARCHING \n");
-
-		System.out.println("--------");
-		System.out.println("X SOLUTION");
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < n; j++)
-				if (x_val[i][j] >= 1 - Math.pow(10, -5))
-					System.out.print("x_{" + i + "," + j + "} = " + x_val[i][j]);
-
-		System.out.println("--------");
-		System.out.println("VECTOR SOLUTION");
-		for (int i = 0; i < n; i++)
-			System.out.println("job " + currentSolution[i] + " in pos " + i);
-		System.out.println("--------");
-		System.out.println("UB = " + currUB);
-		System.out.println("-------");
+//		System.out.println("BEFORE SEARCHING \n");
+//
+//		System.out.println("--------");
+//		System.out.println("X SOLUTION");
+//		for (int i = 0; i < n; i++)
+//			for (int j = 0; j < n; j++)
+//				if (x_val[i][j] >= 1 - Math.pow(10, -5))
+//					System.out.print("x_{" + i + "," + j + "} = " + x_val[i][j]);
+//
+//		System.out.println("--------");
+//		System.out.println("VECTOR SOLUTION");
+//		for (int i = 0; i < n; i++)
+//			System.out.println("job " + currentSolution[i] + " in pos " + i);
+//		System.out.println("--------");
+//		System.out.println("UB = " + currUB);
+//		System.out.println("-------");
 
 		for (int i = 0; i < n - 1; i++) {
 			double newSumA = sumA;
@@ -169,7 +168,6 @@ public class LagrangianWeightedLocalSearch {
 				exchange++;
 				currUB = Math.abs(newSumA / nA - newSumB / nB);
 				lastIter = countIter;
-
 
 				int toExchange = currentSolution[i];
 				currentSolution[i] = currentSolution[i + 1];
@@ -193,17 +191,17 @@ public class LagrangianWeightedLocalSearch {
 			}
 
 		}
-
-		System.out.println("AFTER SEARCHING \n");
-
-		System.out.println("--------");
-
-		System.out.println("VECTOR AFTER SEARCH");
-		for (int i = 0; i < n; i++)
-			System.out.println("job " + currentSolution[i] + " in pos " + i);
-
-		System.out.println("UB =" + bestUB);
-		System.out.println("--------");
+//
+//		System.out.println("AFTER SEARCHING \n");
+//
+//		System.out.println("--------");
+//
+//		System.out.println("VECTOR AFTER SEARCH");
+//		for (int i = 0; i < n; i++)
+//			System.out.println("job " + currentSolution[i] + " in pos " + i);
+//
+//		System.out.println("UB =" + bestUB);
+//		System.out.println("--------");
 
 	}
 
@@ -220,8 +218,7 @@ public class LagrangianWeightedLocalSearch {
 		}
 	}
 
-	private static void addValueToExcelFile(int excelRow, int nA, int nB, double lambda, int lastIter, double bestUB,
-			long timeToExit) {
+	private static void addValueToExcelFile(int excelRow, double lambda, long timeToExit) {
 		try {
 
 			Number number = new Number(0, excelRow, nA);
@@ -252,19 +249,16 @@ public class LagrangianWeightedLocalSearch {
 			number = new Number(7, excelRow, (double) timeToExit / 1000);
 			excelSheet.addCell(number);
 
-			double Za = 0;
-			for (int i = 0; i < nA; i++)
-				Za += z[i];
+			String condition_ = condition == 0 ? "YES" : "NO";
 
-			String condition = "YES";
-			if (P < ((2 * nA * Pb - 2 * nB * Pa) / (Za * (n - 1) * nB)))
-				condition = "NO";
-
-			label = new Label(8, excelRow, condition);
+			label = new Label(8, excelRow, condition_);
 			excelSheet.addCell(label);
-			System.out.println(condition);
+//			System.out.println(condition);
 
 			number = new Number(9, excelRow, seed - 1);
+			excelSheet.addCell(number);
+
+			number = new Number(10, excelRow, (double) exchange / countIter);
 			excelSheet.addCell(number);
 
 			for (int i = 15; i < 15 + n; i++)
@@ -322,6 +316,9 @@ public class LagrangianWeightedLocalSearch {
 			label = new Label(9, 0, "Seed");
 			excelSheet.addCell(label);
 
+			label = new Label(10, 0, "AVG exchange");
+			excelSheet.addCell(label);
+
 		} catch (Exception e) {
 			throw new RuntimeException("error creating excel file");
 		}
@@ -338,7 +335,6 @@ public class LagrangianWeightedLocalSearch {
 //			for (int j = 0; j < n; j++)
 //				coefficients[i][j] = 0.;
 
-		// perche se inverto i due for cambia il risultato ?
 		for (int t = 0; t < n; t++)
 			for (int j = 0; j < n; j++) {
 				coefficients[j][t] += ((gamma[j][t] - epsilon[j][t]) * d[t]);
@@ -368,45 +364,45 @@ public class LagrangianWeightedLocalSearch {
 
 		double current = 0;
 
-		double sumA = 0, sumB = 0;
+		double sA = 0, sB = 0;
 		int countA = 0;
 		int countB = 0;
 
 		for (int i = 0; i < n; i++) {
 			if (countB == nB) {
 				current += p[countA];
-				sumA += current * z[countA];
+				sA += current * z[countA];
 				countA++;
 			} else if (countA == nA) {
 				current += p[nA + countB];
-				sumB += current * z[nA + countB];
+				sB += current * z[nA + countB];
 				countB++;
 			} else if (i % 2 == 0) {
 				current += p[countA];
-				sumA += current * z[countA];
+				sA += current * z[countA];
 				countA++;
 			} else {
 				current += p[nA + countB];
-				sumB += current * z[nA + countB];
+				sB += current * z[nA + countB];
 				countB++;
 			}
 
 		}
 
-		maxBound = Math.max(sumA / nA - sumB / nB, sumB / nB - sumA / nA);
+		maxBound = Math.max(sA / nA - sB / nB, sB / nB - sA / nA);
 
 	}
 
-	private static void printMultipliers() {
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < n; j++) {
-				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j]);
-				System.out.println("delta{" + i + "," + j + "} = " + delta[i][j]);
-				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j]);
-			}
-	}
+//	private static void printMultipliers() {
+//		for (int i = 0; i < n; i++)
+//			for (int j = 0; j < n; j++) {
+//				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j]);
+//				System.out.println("delta{" + i + "," + j + "} = " + delta[i][j]);
+//				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j]);
+//			}
+//	}
 
-	private static void printParam() {
+//	private static void printParam() {
 //		System.out.println("alpha = " + alpha);
 //		System.out.println("beta = " + beta);
 //		System.out.println("v = " + v);
@@ -430,7 +426,7 @@ public class LagrangianWeightedLocalSearch {
 //		System.out.println("grad norm " + computeGradientLength());
 //		System.out.println("LB" + bestLb);
 //		System.out.println("UB" + bestUb);
-	}
+//	}
 
 	private static void updateBounds(IloCplex cplex) throws IloException {
 
@@ -465,7 +461,7 @@ public class LagrangianWeightedLocalSearch {
 
 		for (int t = 0; t < n; t++)
 			for (int j = 0; j < n; j++)
-				if (x_val[j][t] >= 1 - Math.pow(10, -6)) {
+				if (x_val[j][t] >= 1 - Math.pow(10, -5)) {
 					current += p[j];
 					currentSolution[t] = j;
 
@@ -486,7 +482,7 @@ public class LagrangianWeightedLocalSearch {
 	}
 
 	private static void updateMultipliers() {
-		double factor = (currUB - currLB) / subgradientLength;
+		double factor = (bestUB * condition - currLB) / subgradientLength;
 
 		alpha = Math.max(0, alpha + subgrad_alpha * factor);
 		beta = Math.max(0, beta + subgrad_beta * factor);
@@ -536,7 +532,7 @@ public class LagrangianWeightedLocalSearch {
 
 			}
 			for (int l = 0; l < n; l++)
-				if (x_val[l][t] == 1.)
+				if (x_val[l][t] >= 1 - Math.pow(10, -5))
 					toAdd += p[l];
 
 		}
@@ -560,18 +556,16 @@ public class LagrangianWeightedLocalSearch {
 
 		if (1 - alpha - beta >= 0)
 			v = 0;
-		else {
+		else
 			v = maxBound;
-		}
 
 		for (int t = 0; t < n; t++) {
-			for (int j = 0; j < nA; j++) {
+			for (int j = 0; j < nA; j++)
 				if (z[j] * alpha / nA - z[j] * beta / nA - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
 					w[j][t] = 0.;
 				else
 					w[j][t] = d[t];
 
-			}
 			for (int j = nA; j < n; j++) {
 				if (z[j] * beta / nB - z[j] * alpha / nB - gamma[j][t] + delta[j][t] + epsilon[j][t] >= 0)
 					w[j][t] = 0.;
@@ -587,7 +581,7 @@ public class LagrangianWeightedLocalSearch {
 
 		subgrad_alpha = 0.;
 		subgrad_beta = 0;
-		timeLimit = 3600;
+		timeLimit = 1800;
 		subgradientLength = 0;
 
 		exchange = 0;
@@ -620,7 +614,7 @@ public class LagrangianWeightedLocalSearch {
 		for (int i = 0; i < n; i++) {
 			p[i] = r.nextInt(25) + 1;
 			z[i] = r.nextInt(25) + 1;
-			System.out.println(p[i] + " " + z[i]);
+//			System.out.println(p[i] + " " + z[i]);
 		}
 
 		Pa = 0;
@@ -649,5 +643,24 @@ public class LagrangianWeightedLocalSearch {
 			}
 		}
 
+		condition = 0;
+		if (Pb / nB >= Pa / nA) {
+
+			double Za = 0;
+			for (int i = 0; i < nA; i++)
+				Za += z[i];
+
+			if (P < ((2 * nA * Pb - 2 * nB * Pa) / (Za * (n - 1) * nB)))
+				condition = 1;
+
+		} else {
+			double Zb = 0;
+			for (int i = nA; i < n; i++)
+				Zb += z[i];
+
+			if (P < ((2 * nB * Pa - 2 * nA * Pb) / (Zb * (n - 1) * nA)))
+				condition = 1;
+
+		}
 	}
 }

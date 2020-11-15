@@ -14,9 +14,7 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
-//controllare se ci sono < 10^-6 e >0
 //controllare se migliora la corrispondenza tra w e x
-
 
 public class LagrangianUnweightedLocalSearch {
 
@@ -51,76 +49,85 @@ public class LagrangianUnweightedLocalSearch {
 
 	public static double[] timeSol;
 
-	public static void main(String[] args) throws IloException {
+	public static void main(String[] args) {
 
 		r = new Random();
 
 		// create CPLEX environment
-		IloCplex cplex = new IloCplex();
-		cplex.setOut(null);
+		IloCplex cplex;
+		try {
+			cplex = new IloCplex();
 
-		for (int pow = 1; pow <= 4; pow++) {
-			for (nA = 20; nA <= 20; nA += 50) {
-				for (nB = nA; nB <= nA + 30; nB += 10) {
+			cplex.setOut(null);
 
-					n = nA + nB;
+			for (int pow = 1; pow <= 4; pow++) {
+				for (nA = 20; nA <= 20; nA += 50) {
+					for (nB = nA; nB <= nA + 30; nB += 10) {
 
-					// create Excel file
-					createExcelFile(pow, nA, nB);
-					int excelRow = 1;
+						n = nA + nB;
 
-					// create binary x variables
-					IloNumVar[][] x = new IloNumVar[n][];
-					for (int i = 0; i < n; i++)
-						x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+						// create Excel file
+						createExcelFile(pow, nA, nB);
+						int excelRow = 1;
 
-					for (int scenario = 0; scenario < 50; scenario++) {
+						// create binary x variables
+						IloNumVar[][] x = new IloNumVar[n][];
+						for (int i = 0; i < n; i++)
+							x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
 
-						initParam(Math.pow(10, pow)); // init parameters
+						for (int scenario = 0; scenario < 50; scenario++) {
 
-						start = System.currentTimeMillis();
+							initParam(Math.pow(10, pow)); // init parameters
 
-						computeMaxBound(); // compute an upper bound on the value of V
+							start = System.currentTimeMillis();
 
-						while (Math.abs(bestUB) > 0 && (System.currentTimeMillis() - start) / 1000 < timeLimit) {
+							computeMaxBound(); // compute an upper bound on the value of V
 
-							countIter++;
+							while (Math.abs(bestUB) > Math.pow(10, -6)
+									&& (System.currentTimeMillis() - start) / 1000 < timeLimit) {
 
-							createRelaxationModel(cplex, x, n); // create the relaxation model
+								countIter++;
 
-							if (cplex.solve()) {
-								// printMultipliers();
-								computeOptimalWandV(cplex, x); // compute the optimal value of W and V w.r.t. x
-								updateBounds(cplex); // update current/best lower/upper bound
-								improveSolution();
+								createRelaxationModel(cplex, x, n); // create the relaxation model
 
-								computeSubGrad(); // compute the value of subgradient
+								if (cplex.solve()) {
+									// printMultipliers();
 
-								updateMultipliers(); // update multipliers
+									computeOptimalWandV(cplex, x); // compute the optimal value of W and V w.r.t. x
+									updateBounds(cplex); // update current/best lower/upper bound
+									improveSolution();
 
-								// printParam();
+									computeSubGrad(); // compute the value of subgradient
+
+									updateMultipliers(); // update multipliers
+
+									// printParam();
+								}
+
+								cplex.clearModel();
 							}
 
-							cplex.clearModel();
+							long timeToExit = System.currentTimeMillis() - start;
+
+							// add to file Excel the results
+							addValueToExcelFile(excelRow, Math.pow(10, pow), timeToExit);
+
+							excelRow++;
+
+							System.out.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = "
+									+ Math.pow(10, pow) + ", N.iter = " + lastIter + " , Obj = " + bestUB + " ,"
+									+ (double) timeToBest / 1000 + ", " + (double) timeToExit / 1000 + ", "
+									+ (seed - 1));
 						}
 
-						long timeToExit = System.currentTimeMillis() - start;
-
-						// add to file Excel the results
-						addValueToExcelFile(excelRow, Math.pow(10, pow), timeToExit);
-
-						excelRow++;
-
-						System.out.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = "
-								+ Math.pow(10, pow) + ", N.iter = " + lastIter + " , Obj = " + bestUB + " ,"
-								+ (double) timeToBest / 1000 + ", " + (double) timeToExit / 1000 + ", " + (seed - 1));
+						// close excel file
+						closeExcelFile();
 					}
-
-					// close excel file
-					closeExcelFile();
 				}
+				seed = 1;
 			}
-			seed = 1;
+		} catch (IloException e) {
+			System.err.println("MAIN ERROR");
 		}
 
 	}
@@ -252,8 +259,8 @@ public class LagrangianUnweightedLocalSearch {
 			number = new Number(9, excelRow, (double) exchange / countIter);
 			excelSheet.addCell(number);
 
-//			for (int i = 15; i < 15 + n; i++)
-//				excelSheet.addCell(new Number(i, excelRow, p[i - 15]));
+			for (int i = 15; i < 15 + n; i++)
+				excelSheet.addCell(new Number(i, excelRow, p[i - 15]));
 //
 //			for (int i = 0; i < 100; i++)
 //				excelSheet.addCell(new Number(i, 61 + excelRow, timeSol[i]));
@@ -303,8 +310,8 @@ public class LagrangianUnweightedLocalSearch {
 
 			label = new Label(8, 0, "Seed");
 			excelSheet.addCell(label);
-
-			label = new Label(0, 60, "Solution in time");
+			
+			label = new Label(9, 0, "AVG exchange");
 			excelSheet.addCell(label);
 
 		} catch (Exception e) {
@@ -313,8 +320,6 @@ public class LagrangianUnweightedLocalSearch {
 
 	}
 
-	// I VINCOLI DI ASSEGNAMENTO INSERIRLI NEL PRIMO DOPPIO FOR- IL PRIMO DOPPIO FOR
-	// SI PUO' ELIMINARE
 	private static void createRelaxationModel(IloCplex cplex, IloNumVar[][] x, int n) throws IloException {
 
 		IloLinearNumExpr fo = cplex.linearNumExpr();
@@ -325,7 +330,6 @@ public class LagrangianUnweightedLocalSearch {
 //			for (int j = 0; j < n; j++)
 //				coefficients[i][j] = 0.;
 
-		// perche se inverto i due for cambia il risultato ?
 		for (int t = 0; t < n; t++)
 			for (int j = 0; j < n; j++) {
 				coefficients[j][t] += ((gamma[j][t] - epsilon[j][t]) * d[t]);
@@ -356,45 +360,45 @@ public class LagrangianUnweightedLocalSearch {
 
 		double current = 0;
 
-		double sumA = 0, sumB = 0;
+		double sA = 0, sB = 0;
 		int countA = 0;
 		int countB = 0;
 
 		for (int i = 0; i < n; i++) {
 			if (countB == nB) {
 				current += p[countA];
-				sumA += current;
+				sA += current;
 				countA++;
 			} else if (countA == nA) {
 				current += p[nA + countB];
-				sumB += current;
+				sB += current;
 				countB++;
 			} else if (i % 2 == 0) {
 				current += p[countA];
-				sumA += current;
+				sA += current;
 				countA++;
 			} else {
 				current += p[nA + countB];
-				sumB += current;
+				sB += current;
 				countB++;
 			}
 
 		}
 
-		maxBound = Math.max(sumA / nA - sumB / nB, sumB / nB - sumA / nA);
+		maxBound = Math.max(sA / nA - sB / nB, sB / nB - sA / nA);
 
 	}
 
-	private static void printMultipliers() {
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < n; j++) {
-				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j]);
-				System.out.println("delta{" + i + "," + j + "} = " + delta[i][j]);
-				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j]);
-			}
-	}
+//	private static void printMultipliers() {
+//		for (int i = 0; i < n; i++)
+//			for (int j = 0; j < n; j++) {
+//				System.out.println("gamma_{" + i + "," + j + "} = " + gamma[i][j]);
+//				System.out.println("delta{" + i + "," + j + "} = " + delta[i][j]);
+//				System.out.println("eps{" + i + "," + j + "} = " + epsilon[i][j]);
+//			}
+//	}
 
-	private static void printParam() {
+//	private static void printParam() {
 //		System.out.println("alpha = " + alpha);
 //		System.out.println("beta = " + beta);
 //		System.out.println("v = " + v);
@@ -418,7 +422,7 @@ public class LagrangianUnweightedLocalSearch {
 //		System.out.println("grad norm " + computeGradientLength());
 //		System.out.println("LB" + bestLb);
 //		System.out.println("UB" + bestUb);
-	}
+//	}
 
 	private static void updateBounds(IloCplex cplex) throws IloException {
 
@@ -582,7 +586,6 @@ public class LagrangianUnweightedLocalSearch {
 		sumA = 0.;
 		sumB = 0.;
 
-		timeSol = new double[100];
 		currentSolution = new int[n];
 		p = new int[n];
 		d = new double[n];
