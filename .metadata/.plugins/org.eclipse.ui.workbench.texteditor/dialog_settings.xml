@@ -5,37 +5,38 @@
 		<item key="DIALOG_Y_ORIGIN" value="505"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Pa"/>
+		<item key="selection" value="lb"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="Pa"/>
-			<item value="initPar"/>
-			<item value="initPara"/>
+			<item value="lb"/>
+			<item value="improve"/>
+			<item value="BEFORE"/>
+			<item value="im"/>
+			<item value="initP"/>
 			<item value="init"/>
-			<item value="P"/>
-			<item value="Fo"/>
+			<item value="initpARA"/>
+			<item value="addVa"/>
+			<item value="exchange"/>
+			<item value="lastIter"/>
 			<item value="initPa"/>
-			<item value="initparam"/>
-			<item value="found"/>
-			<item value="seed"/>
-			<item value="setSeed"/>
+			<item value="initPara"/>
+			<item value="impr"/>
 			<item value="update"/>
-			<item value="gradie"/>
-			<item value="Math.pow"/>
-			<item value="computeMax"/>
+			<item value="initi"/>
 		</list>
 		<list key="replacehistory">
+			<item value="weights"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1310"/>
-		<item key="DIALOG_Y_ORIGIN" value="243"/>
+		<item key="DIALOG_X_ORIGIN" value="227"/>
+		<item key="DIALOG_Y_ORIGIN" value="315"/>
 		<item key="DIALOG_WIDTH" value="385"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
 	</section>
 </section>

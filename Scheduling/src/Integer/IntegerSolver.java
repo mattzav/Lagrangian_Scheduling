@@ -33,59 +33,59 @@ public class IntegerSolver {
 
 	public static void main(String[] args) {
 		r = new Random();
-//		r.setSeed(1024);
+		r.setSeed(1);
 
-		createExcelFile();
+//		createExcelFile();
 		int excelRow = 1;
 
-		for (int trial = 0; trial < 20; trial++)
-			for (nA = 4; nA <= 4; nA += 10) {
-				for (nB = 6; nB <= 6; nB++) {
+//		for (int trial = 5; trial < 20; trial++)
+		for (nA = 50; nA <= 50; nA += 10) {
+			for (nB = 50; nB <= 50; nB++) {
 
-					try {
-						n = nA + nB;
+				try {
+					n = nA + nB;
 //					System.out.println(nA + " " + nB);
-						initParam();
-						IloCplex cplex = new IloCplex();
-						cplex.setOut(null);
-						// cplex.setParam(IloCplex.Param.MIP.Tolerances.AbsMIPGap, 0.05);
+					initParam();
+					IloCplex cplex = new IloCplex();
+					cplex.setOut(null);
+					// cplex.setParam(IloCplex.Param.MIP.Tolerances.AbsMIPGap, 0.05);
 
-						createIntegerModel(cplex);
+					createIntegerModel(cplex);
 
-						cplex.use(new Callback());
+					cplex.use(new Callback());
 
-						start = System.currentTimeMillis();
-						elapsed = -1;
-						elapsedFor5 = -1;
+					start = System.currentTimeMillis();
+					elapsed = -1;
+					elapsedFor5 = -1;
+					System.out.println("start");
+					if (cplex.solve()) {
 
-						if (cplex.solve()) {
-
-							System.out.println("Fo = " + cplex.getObjValue());
+						System.out.println("Fo = " + cplex.getObjValue() + " " + elapsed + " " + elapsedFor5);
 //						// add to file excel the resulting time
 //						addValueToExcelFile(excelRow, nA, nB, cplex.getObjValue(), elapsed, elapsedFor5);
 //						excelRow++;
 //
-							for (int i = 0; i < n; i++) {
+//						for (int i = 0; i < n; i++) {
 //							// if (d[i] > 0)
 //							// System.out.println("d_" + i + " = " + d[i]);
-								for (int j = 0; j < n; j++) {
-									if (cplex.getValue(x[i][j]) >= 1 - Math.pow(10, -4))
-										System.out.println("x_{" + i + "," + j + "} = " + cplex.getValue(x[i][j]));
-								}
-							}
+//							for (int j = 0; j < n; j++) {
+//								if (cplex.getValue(x[i][j]) >= 1 - Math.pow(10, -4))
+//									System.out.println("x_{" + i + "," + j + "} = " + cplex.getValue(x[i][j]));
+//							}
+//						}
 
-						}
-					} catch (
-
-					IloException e) {
-						closeExcelFile();
-						System.out.println("err");
-						e.printStackTrace();
 					}
+				} catch (
+
+				IloException e) {
+					closeExcelFile();
+					System.out.println("err");
+					e.printStackTrace();
 				}
-				// add 3 row to leave space between group having different value of n
-				excelRow += 3;
 			}
+			// add 3 row to leave space between group having different value of n
+			excelRow += 3;
+		}
 
 		// close excel file
 		closeExcelFile();
@@ -165,14 +165,15 @@ public class IntegerSolver {
 		p = new int[n];
 		d = new double[n];
 
-		r.setSeed(r.nextInt());
 		for (int i = 0; i < nA; i++) {
 			p[i] = (r.nextInt(25) + 1);
+			r.nextInt();
 			System.out.print(p[i] + " ");
 		}
 		System.out.println();
 		for (int i = nA; i < n; i++) {
 			p[i] = (r.nextInt(25) + 1);
+			r.nextInt();
 			System.out.print(p[i] + " ");
 
 		}
@@ -279,7 +280,7 @@ public class IntegerSolver {
 		@Override
 		protected void main() throws IloException {
 
-//			System.out.println(getObjValue());
+			System.out.println(getObjValue());
 			if (Math.abs(getObjValue()) <= 0.05 && elapsedFor5 == -1)
 				elapsedFor5 = System.currentTimeMillis() - start;
 			elapsed = System.currentTimeMillis() - start;

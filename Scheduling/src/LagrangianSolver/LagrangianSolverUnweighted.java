@@ -18,7 +18,7 @@ import jxl.write.WriteException;
 
 public class LagrangianSolverUnweighted {
 
-	private static final String EXCEL_FILE_LOCATION = "src\\results\\lambda = ";
+	private static final String EXCEL_FILE_LOCATION = "C:\\Users\\Matte\\Dropbox\\Scheduling\\Job diversi\\Articolo\\Risultati Numerici\\lambda = ";
 	static WritableWorkbook workBook = null;
 	static WritableSheet excelSheet;
 
@@ -35,7 +35,7 @@ public class LagrangianSolverUnweighted {
 	public static double subgrad_alpha = 0., subgrad_beta = 0;
 	public static double[][] subgrad_gamma, subgrad_delta, subgrad_epsilon;
 	public static int n, nA, nB;
-	public static int numIter, countIter, lastIter;
+	public static int countIter, lastIter;
 
 	public static long start, timeToBest;
 	public static double timeLimit;
@@ -53,7 +53,7 @@ public class LagrangianSolverUnweighted {
 		IloCplex cplex = new IloCplex();
 		cplex.setOut(null);
 
-		for (int pow = 2; pow <= 2; pow++) {
+		for (int pow = 1; pow <= 4; pow++) {
 			for (nA = 10; nA <= 20; nA += 10) {
 				for (nB = nA; nB <= nA + 30; nB += 10) {
 					n = nA + nB;
@@ -62,43 +62,58 @@ public class LagrangianSolverUnweighted {
 					createExcelFile(pow, nA, nB);
 					int excelRow = 1;
 
+					// create binary x variables
+					IloNumVar[][] x = new IloNumVar[n][];
+					for (int i = 0; i < n; i++)
+						x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+
 					for (int scenario = 0; scenario < 50; scenario++) {
 
 						initParam(Math.pow(10, pow)); // init parameters
+						double timeSol[] = new double[100];
+
+						start = System.currentTimeMillis();
+						int interval = 1;
 
 						computeMaxBound(); // compute an upper bound on the value of V
 
-						start = System.currentTimeMillis();
-
-						while (countIter < numIter && Math.abs(bestUB) > Math.pow(10, -6)
-								&& (System.currentTimeMillis() - start) / 1000 < 3600) {
+						while (Math.abs(bestUB) > 0 && (System.currentTimeMillis() - start) / 1000 < timeLimit) {
 
 							countIter++;
-
-							// create binary x variables
-							IloNumVar[][] x = new IloNumVar[n][];
-							for (int i = 0; i < n; i++)
-								x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
 
 							createRelaxationModel(cplex, x, n); // create the relaxation model
 
 							if (cplex.solve()) {
 								// printMultipliers();
-
 								computeOptimalWandV(cplex, x); // compute the optimal value of W and V w.r.t. x
+
 								computeSubGrad(); // compute the value of subgradient
+
 								updateBounds(cplex); // update current/best lower/upper bound
+
+								if ((System.currentTimeMillis() - start) / 1000 >= 18 * interval) {
+									if (interval < 101) {
+										timeSol[interval - 1] = bestUB;
+										interval++;
+									} else {
+										if (timeSol[99] > bestUB) {
+											timeSol[99] = bestUB;
+										}
+									}
+								}
+
 								updateMultipliers(); // update multipliers
 
 								// printParam();
 							}
+
 							cplex.clearModel();
 						}
 
 						long timeToExit = System.currentTimeMillis() - start;
 
 						// add to file Excel the results
-						addValueToExcelFile(excelRow, nA, nB, Math.pow(10, pow), lastIter, bestUB, timeToExit);
+						addValueToExcelFile(excelRow, nA, nB, Math.pow(10, pow), lastIter, bestUB, timeToExit, timeSol);
 						excelRow++;
 
 						System.out.println("n = " + n + ", nA = " + nA + ", nB = " + nB + ", lambda_i = "
@@ -129,7 +144,7 @@ public class LagrangianSolverUnweighted {
 	}
 
 	private static void addValueToExcelFile(int excelRow, int nA, int nB, double lambda, int lastIter, double bestUB,
-			long timeToExit) {
+			long timeToExit, double[] timeSol) {
 		try {
 
 			Number number = new Number(0, excelRow, nA);
@@ -165,6 +180,9 @@ public class LagrangianSolverUnweighted {
 
 			for (int i = 15; i < 15 + n; i++)
 				excelSheet.addCell(new Number(i, excelRow, p[i - 15]));
+
+			for (int i = 0; i < 100; i++)
+				excelSheet.addCell(new Number(i, 61 + excelRow, timeSol[i]));
 
 		} catch (Exception e) {
 			throw new RuntimeException("Error adding excel value");
@@ -212,21 +230,26 @@ public class LagrangianSolverUnweighted {
 			label = new Label(8, 0, "Seed");
 			excelSheet.addCell(label);
 
+			label = new Label(0, 60, "Solution in time");
+			excelSheet.addCell(label);
+
 		} catch (Exception e) {
 			throw new RuntimeException("error creating excel file");
 		}
 
 	}
 
+	// I VINCOLI DI ASSEGNAMENTO INSERIRLI NEL PRIMO DOPPIO FOR- IL PRIMO DOPPIO FOR
+	// SI PUO' ELIMINARE
 	private static void createRelaxationModel(IloCplex cplex, IloNumVar[][] x, int n) throws IloException {
 
 		IloLinearNumExpr fo = cplex.linearNumExpr();
 
 		double coefficients[][] = new double[n][n];
 
-		for (int i = 0; i < n; i++)
-			for (int j = 0; j < n; j++)
-				coefficients[i][j] = 0.;
+//		for (int i = 0; i < n; i++)
+//			for (int j = 0; j < n; j++)
+//				coefficients[i][j] = 0.;
 
 		// perche se inverto i due for cambia il risultato ?
 		for (int t = 0; t < n; t++)
@@ -238,24 +261,21 @@ public class LagrangianSolverUnweighted {
 					}
 			}
 
-		for (int t = 0; t < n; t++)
-			for (int j = 0; j < n; j++)
+		for (int t = 0; t < n; t++) {
+			cplex.addEq(cplex.sum(x[t]), 1);
+			IloLinearNumExpr t_th_constraint = cplex.linearNumExpr();
+
+			for (int j = 0; j < n; j++) {
 				fo.addTerm(coefficients[t][j], x[t][j]);
+				t_th_constraint.addTerm(1, x[j][t]);
+
+			}
+			cplex.addEq(1, t_th_constraint);
+
+		}
 
 		cplex.addMinimize(fo);
 
-		// assignment
-		for (int j = 0; j < n; j++) {
-			cplex.addEq(cplex.sum(x[j]), 1);
-		}
-
-		for (int t = 0; t < n; t++) {
-			IloLinearNumExpr t_th_constraint = cplex.linearNumExpr();
-			for (int j = 0; j < n; j++)
-				t_th_constraint.addTerm(1, x[j][t]);
-			cplex.addEq(1, t_th_constraint);
-		}
-		// end assignment
 	}
 
 	private static void computeMaxBound() {
@@ -373,7 +393,7 @@ public class LagrangianSolverUnweighted {
 	}
 
 	private static void updateMultipliers() {
-		double factor = (currUB - currLB) / subgradientLength;
+		double factor = (-currLB) / subgradientLength;
 
 		alpha = Math.max(0, alpha + subgrad_alpha * factor);
 		beta = Math.max(0, beta + subgrad_beta * factor);
@@ -469,8 +489,7 @@ public class LagrangianSolverUnweighted {
 
 		subgrad_alpha = 0.;
 		subgrad_beta = 0;
-		numIter = 50000;
-		timeLimit = 3600;
+		timeLimit = 1800;
 		subgradientLength = 0;
 
 		countIter = 0;
@@ -497,6 +516,7 @@ public class LagrangianSolverUnweighted {
 
 		for (int i = 0; i < n; i++) {
 			p[i] = r.nextInt(25) + 1;
+			r.nextInt();
 		}
 
 		Pa = 0;

@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="ilog.concert.IloNumExpr"/>
     <fullyQualifiedTypeName name="ilog.concert.IloNumVar"/>
     <fullyQualifiedTypeName name="javax.management.monitor.GaugeMonitorMBean"/>
-    <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="ilog.concert.IloLinearNumExpr"/>
     <fullyQualifiedTypeName name="jxl.write.WritableWorkbook"/>
     <fullyQualifiedTypeName name="jxl.write.WritableSheet"/>
@@ -14,13 +13,16 @@
     <fullyQualifiedTypeName name="jxl.write.WriteException"/>
     <fullyQualifiedTypeName name="com.sun.jmx.mbeanserver.SunJmxMBeanServer"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="IntegerSolver.Callback"/>
     <fullyQualifiedTypeName name="ilog.cplex.IloCplex"/>
     <fullyQualifiedTypeName name="ilog.cplex.IloCplex.IncumbentCallback"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="jxl.write.Number"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="sun.util.resources.cldr.ext.CurrencyNames_bem"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>

@@ -39,8 +39,8 @@ public class IntegerWeighted {
 //		createExcelFile();
 //		int excelRow = 1;
 
-		for (nA = 3; nA <= 3; nA += 51) {
-			for (nB = 4; nB <= 4; nB += 5) {
+		for (nA = 20; nA <= 20; nA += 51) {
+			for (nB = 20; nB <= 20; nB += 5) {
 				System.out.println("\n STARTING nA = " + nA + " - nB = " + nB);
 				System.out.println("------------");
 				int count = 0;
@@ -192,6 +192,7 @@ public class IntegerWeighted {
 			weights[i] = r.nextInt(25) + 1;
 			System.out.print(weights[i] + " ");
 		}
+
 		Pa = 0;
 		Pb = 0;
 		P = 0;

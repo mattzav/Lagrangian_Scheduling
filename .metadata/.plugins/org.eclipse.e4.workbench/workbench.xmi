@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_7whdUQ6-EeuxX9R8RfZQvw" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_7whdUg6-EeuxX9R8RfZQvw" bindingContexts="_7whdWw6-EeuxX9R8RfZQvw">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolverWeighted.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolverWeighted.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolverWeighted.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolver.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;IntegerWeighted.java&quot; tooltip=&quot;Scheduling/src/Integer/IntegerWeighted.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Integer/IntegerWeighted.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Ex.java&quot; tooltip=&quot;Scheduling/src/Ex.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Ex.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;IntegerSolver.java&quot; tooltip=&quot;Scheduling/src/Integer/IntegerSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Integer/IntegerSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditorNoSource&quot; name=&quot;System.class&quot; tooltip=&quot;java.lang.System&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Users\/Matte\/.p2\/pool\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_14.0.2.v20200815-0932\/jre\/lib\/jrt-fs.jar`java.base=/org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY=/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/bin\/x64_win64=/=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/14\/docs\/api\/=/&amp;lt;java.lang(System.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;IntegerSolver.java&quot; tooltip=&quot;Scheduling/src/IntegerSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/IntegerSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianFOOpt.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianFOOpt.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianFOOpt.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolverFirstVersion.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolverFirstVersion.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolverFirstVersion.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;IloCplexModeler.class&quot; tooltip=&quot;ilog.cplex.IloCplexModeler&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/lib\/cplex.jar&amp;lt;ilog.cplex(IloCplexModeler.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ProvaCall.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/ProvaCall.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/ProvaCall.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSingle.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSingle.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSingle.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;CpxLinearExpr.class&quot; tooltip=&quot;ilog.cplex.CpxLinearExpr&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/lib\/cplex.jar&amp;lt;ilog.cplex(CpxLinearExpr.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolver.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Main.java&quot; tooltip=&quot;Scheduling/src/Main.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Main.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;CplexI.class&quot; tooltip=&quot;ilog.cplex.CplexI&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/lib\/cplex.jar&amp;lt;ilog.cplex(CplexI.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MIPex1.java&quot; tooltip=&quot;Scheduling/src/MIPex1.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/MIPex1.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditorNoSource&quot; name=&quot;Double.class&quot; tooltip=&quot;java.lang.Double&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Users\/Matte\/.p2\/pool\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_14.0.2.v20200815-0932\/jre\/lib\/jrt-fs.jar`java.base=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/14\/docs\/api\/=/&amp;lt;java.lang(Double.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianWeightedLocalSearch.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianWeightedLocalSearch.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianWeightedLocalSearch.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianUnweightedLocalSearch.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianUnweightedLocalSearch.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianUnweightedLocalSearch.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolverWeighted.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolverWeighted.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolverWeighted.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditorNoSource&quot; name=&quot;System.class&quot; tooltip=&quot;java.lang.System&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Users\/Matte\/.p2\/pool\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_14.0.2.v20200815-0932\/jre\/lib\/jrt-fs.jar`java.base=/org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY=/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/bin\/x64_win64=/=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/14\/docs\/api\/=/&amp;lt;java.lang(System.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolverUnweighted.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolverUnweighted.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolverUnweighted.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditorNoSource&quot; name=&quot;PrintStream.class&quot; tooltip=&quot;java.io.PrintStream&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Users\/Matte\/.p2\/pool\/plugins\/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_14.0.2.v20200815-0932\/jre\/lib\/jrt-fs.jar`java.base=/org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY=/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/bin\/x64_win64=/=/module=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/14\/docs\/api\/=/&amp;lt;java.io(PrintStream.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MultiplierExchange.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/MultiplierExchange.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/MultiplierExchange.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;IntegerSolver.java&quot; tooltip=&quot;Scheduling/src/Integer/IntegerSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Integer/IntegerSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;RelaxedWeighted.java&quot; tooltip=&quot;Scheduling/src/Integer/RelaxedWeighted.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Integer/RelaxedWeighted.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;IntegerWeighted.java&quot; tooltip=&quot;Scheduling/src/Integer/IntegerWeighted.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Integer/IntegerWeighted.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolver.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Ex.java&quot; tooltip=&quot;Scheduling/src/Ex.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/Ex.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;IntegerSolver.java&quot; tooltip=&quot;Scheduling/src/IntegerSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/IntegerSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianFOOpt.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianFOOpt.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianFOOpt.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolverFirstVersion.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolverFirstVersion.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolverFirstVersion.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;IloCplexModeler.class&quot; tooltip=&quot;ilog.cplex.IloCplexModeler&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/lib\/cplex.jar&amp;lt;ilog.cplex(IloCplexModeler.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ProvaCall.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/ProvaCall.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/ProvaCall.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSingle.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSingle.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSingle.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;CpxLinearExpr.class&quot; tooltip=&quot;ilog.cplex.CpxLinearExpr&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=Scheduling/C:\/Program Files\/IBM\/ILOG\/CPLEX_Studio1210\/cplex\/lib\/cplex.jar&amp;lt;ilog.cplex(CpxLinearExpr.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolver.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Scheduling/src/LagrangianSolver.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_7whdUg6-EeuxX9R8RfZQvw" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_8eGVAA6-EeuxX9R8RfZQvw" label="%trimmedwindow.label.eclipseSDK" x="-11" y="0" width="1102" height="1402">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_7whdUg6-EeuxX9R8RfZQvw" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_8eGVAA6-EeuxX9R8RfZQvw" label="%trimmedwindow.label.eclipseSDK" x="491" y="34" width="1463" height="1100">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -69,7 +69,7 @@
           <tags>persp.actionSet:org.eclipse.jdt.junit.JUnitActionSet</tags>
           <tags>persp.viewSC:org.eclipse.ant.ui.views.AntView</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_8scTBA6-EeuxX9R8RfZQvw" selectedElement="_8scTDg6-EeuxX9R8RfZQvw" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_8scTBQ6-EeuxX9R8RfZQvw" containerData="1917" selectedElement="_8scTBg6-EeuxX9R8RfZQvw">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_8scTBQ6-EeuxX9R8RfZQvw" containerData="1167" selectedElement="_8scTBg6-EeuxX9R8RfZQvw">
               <children xsi:type="basic:PartStack" xmi:id="_8scTBg6-EeuxX9R8RfZQvw" elementId="left" containerData="6000" selectedElement="_8scTBw6-EeuxX9R8RfZQvw">
                 <tags>org.eclipse.e4.primaryNavigationStack</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_8scTBw6-EeuxX9R8RfZQvw" elementId="org.eclipse.jdt.ui.PackageExplorer" ref="_8sWzcA6-EeuxX9R8RfZQvw" closeable="true">
@@ -96,28 +96,32 @@
                 </children>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_8scTDg6-EeuxX9R8RfZQvw" containerData="8083" selectedElement="_MclSABUBEeuTlc05mrhSYA" horizontal="true">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_MclSABUBEeuTlc05mrhSYA" containerData="5000" selectedElement="_8scTDw6-EeuxX9R8RfZQvw">
-                <children xsi:type="advanced:Placeholder" xmi:id="_8scTDw6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.editorss" containerData="6878" ref="_8sR68A6-EeuxX9R8RfZQvw"/>
-                <children xsi:type="basic:PartStack" xmi:id="_8scTFQ6-EeuxX9R8RfZQvw" elementId="bottom" containerData="3122" selectedElement="_8scTGg6-EeuxX9R8RfZQvw">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_8scTDg6-EeuxX9R8RfZQvw" containerData="8833" selectedElement="_CcAu8CWqEeuIy8st3qZyiw" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_CcAu8CWqEeuIy8st3qZyiw" containerData="6632" selectedElement="_C8wEgCWqEeuIy8st3qZyiw" horizontal="true">
+                <children xsi:type="basic:PartSashContainer" xmi:id="_C8wEgCWqEeuIy8st3qZyiw" containerData="5000" selectedElement="_8scTDw6-EeuxX9R8RfZQvw">
+                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTDw6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.editorss" containerData="6616" ref="_8sR68A6-EeuxX9R8RfZQvw"/>
+                  <children xsi:type="basic:PartStack" xmi:id="_C8wEgSWqEeuIy8st3qZyiw" elementId="PartStack@47755126" containerData="3384" selectedElement="_8scTGg6-EeuxX9R8RfZQvw">
+                    <children xsi:type="advanced:Placeholder" xmi:id="_8scTGg6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.console.ConsoleView" ref="_8sYBkQ6-EeuxX9R8RfZQvw" closeable="true">
+                      <tags>View</tags>
+                      <tags>categoryTag:General</tags>
+                    </children>
+                  </children>
+                </children>
+                <children xsi:type="basic:PartStack" xmi:id="_8scTFQ6-EeuxX9R8RfZQvw" elementId="bottom" toBeRendered="false" containerData="5000">
                   <tags>org.eclipse.e4.secondaryDataStack</tags>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTFg6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.views.ProblemView" ref="_8sWzcw6-EeuxX9R8RfZQvw" closeable="true">
+                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTFg6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.views.ProblemView" toBeRendered="false" ref="_8sWzcw6-EeuxX9R8RfZQvw" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:General</tags>
                   </children>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTFw6-EeuxX9R8RfZQvw" elementId="org.eclipse.jdt.ui.JavadocView" ref="_8sWzdA6-EeuxX9R8RfZQvw" closeable="true">
+                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTFw6-EeuxX9R8RfZQvw" elementId="org.eclipse.jdt.ui.JavadocView" toBeRendered="false" ref="_8sWzdA6-EeuxX9R8RfZQvw" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:Java</tags>
                   </children>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTGA6-EeuxX9R8RfZQvw" elementId="org.eclipse.jdt.ui.SourceView" ref="_8sWzdQ6-EeuxX9R8RfZQvw" closeable="true">
+                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTGA6-EeuxX9R8RfZQvw" elementId="org.eclipse.jdt.ui.SourceView" toBeRendered="false" ref="_8sWzdQ6-EeuxX9R8RfZQvw" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:Java</tags>
                   </children>
                   <children xsi:type="advanced:Placeholder" xmi:id="_8scTGQ6-EeuxX9R8RfZQvw" elementId="org.eclipse.search.ui.views.SearchView" toBeRendered="false" ref="_8sYBkA6-EeuxX9R8RfZQvw" closeable="true">
-                    <tags>View</tags>
-                    <tags>categoryTag:General</tags>
-                  </children>
-                  <children xsi:type="advanced:Placeholder" xmi:id="_8scTGg6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.console.ConsoleView" ref="_8sYBkQ6-EeuxX9R8RfZQvw" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:General</tags>
                   </children>
@@ -131,8 +135,9 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_8scTEA6-EeuxX9R8RfZQvw" elementId="right" toBeRendered="false" containerData="2500">
+              <children xsi:type="basic:PartStack" xmi:id="_8scTEA6-EeuxX9R8RfZQvw" elementId="right" toBeRendered="false" containerData="868">
                 <tags>org.eclipse.e4.secondaryNavigationStack</tags>
+                <tags>Java</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_8scTEQ6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.views.ContentOutline" toBeRendered="false" ref="_8sYBlA6-EeuxX9R8RfZQvw" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:General</tags>
@@ -148,6 +153,10 @@
                 <children xsi:type="advanced:Placeholder" xmi:id="_8scTFA6-EeuxX9R8RfZQvw" elementId="org.eclipse.ant.ui.views.AntView" toBeRendered="false" ref="_8scTAg6-EeuxX9R8RfZQvw" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Ant</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_TD4KUB9uEeu-05qN46LNrw" elementId="org.eclipse.jdt.callhierarchy.view" toBeRendered="false" ref="_TD3jQB9uEeu-05qN46LNrw" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:Java</tags>
                 </children>
               </children>
             </children>
@@ -193,22 +202,26 @@
       <tags>View</tags>
       <tags>categoryTag:Help</tags>
     </sharedElements>
-    <sharedElements xsi:type="advanced:Area" xmi:id="_8sR68A6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.editorss" selectedElement="_myE6QRLsEeuLMLLiL6vntA">
-      <children xsi:type="basic:PartStack" xmi:id="_myE6QRLsEeuLMLLiL6vntA" elementId="PartStack@64716e82" selectedElement="_05CRUB6GEeuPAJaEgISpkQ">
-        <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_5PXtoB0AEeuc1u5uf5K7MA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LagrangianSolverUnweighted.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolverUnweighted.java&quot; partName=&quot;LagrangianSolverUnweighted.java&quot; title=&quot;LagrangianSolverUnweighted.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolverUnweighted.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolverUnweighted.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;507&quot; selectionTopPixel=&quot;92&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>removeOnHide</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_05CRUB6GEeuPAJaEgISpkQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LagrangianSolverWeighted.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianSolverWeighted.java&quot; partName=&quot;LagrangianSolverWeighted.java&quot; title=&quot;LagrangianSolverWeighted.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianSolverWeighted.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Scheduling/src/LagrangianSolver/LagrangianSolverWeighted.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;416&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>removeOnHide</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+    <sharedElements xsi:type="advanced:Area" xmi:id="_8sR68A6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.editorss" selectedElement="_QJUn0Cc8EeuIy8st3qZyiw">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_QJUn0Cc8EeuIy8st3qZyiw" selectedElement="_eVfoESc7EeuIy8st3qZyiw" horizontal="true">
+        <children xsi:type="basic:PartStack" xmi:id="_eVfoESc7EeuIy8st3qZyiw" elementId="PartStack@2ae900b3" containerData="5000" selectedElement="_chq6ACc7EeuIy8st3qZyiw">
           <tags>active</tags>
-          <tags>activeOnClose</tags>
+          <children xsi:type="basic:Part" xmi:id="_chq6ACc7EeuIy8st3qZyiw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LagrangianWeightedLocalSearch.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianWeightedLocalSearch.java&quot; partName=&quot;LagrangianWeightedLocalSearch.java&quot; title=&quot;LagrangianWeightedLocalSearch.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianWeightedLocalSearch.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Scheduling/src/LagrangianSolver/LagrangianWeightedLocalSearch.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;816&quot; selectionTopPixel=&quot;248&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <tags>Editor</tags>
+            <tags>removeOnHide</tags>
+            <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+            <tags>active</tags>
+            <tags>activeOnClose</tags>
+          </children>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_QJUn0Sc8EeuIy8st3qZyiw" elementId="PartStack@22ac08f6" containerData="5000" selectedElement="_KhrC0Cc8EeuIy8st3qZyiw">
+          <children xsi:type="basic:Part" xmi:id="_KhrC0Cc8EeuIy8st3qZyiw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LagrangianUnweightedLocalSearch.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LagrangianUnweightedLocalSearch.java&quot; partName=&quot;LagrangianUnweightedLocalSearch.java&quot; title=&quot;LagrangianUnweightedLocalSearch.java&quot; tooltip=&quot;Scheduling/src/LagrangianSolver/LagrangianUnweightedLocalSearch.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Scheduling/src/LagrangianSolver/LagrangianUnweightedLocalSearch.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;480&quot; selectionTopPixel=&quot;248&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <tags>Editor</tags>
+            <tags>removeOnHide</tags>
+            <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+          </children>
         </children>
       </children>
     </sharedElements>
@@ -239,7 +252,7 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_8sWzcw6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.views.ProblemView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.views.markers.ProblemsView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view PRIMARY_SORT_FIELD=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; categoryGroup=&quot;org.eclipse.ui.ide.severity&quot; markerContentGenerator=&quot;org.eclipse.ui.ide.problemsGenerator&quot; partName=&quot;Problems&quot;>&#xD;&#xA;&lt;expanded>&#xD;&#xA;&lt;category IMemento.internal.id=&quot;Warnings&quot;/>&#xD;&#xA;&lt;/expanded>&#xD;&#xA;&lt;columnWidths org.eclipse.ui.ide.locationField=&quot;150&quot; org.eclipse.ui.ide.markerType=&quot;150&quot; org.eclipse.ui.ide.pathField=&quot;200&quot; org.eclipse.ui.ide.resourceField=&quot;150&quot; org.eclipse.ui.ide.severityAndDescriptionField=&quot;500&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.resourceField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.pathField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.locationField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.markerType&quot;/>&#xD;&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view PRIMARY_SORT_FIELD=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; categoryGroup=&quot;org.eclipse.ui.ide.severity&quot; markerContentGenerator=&quot;org.eclipse.ui.ide.problemsGenerator&quot; partName=&quot;Problems&quot;>&#xD;&#xA;&lt;columnWidths org.eclipse.ui.ide.locationField=&quot;150&quot; org.eclipse.ui.ide.markerType=&quot;150&quot; org.eclipse.ui.ide.pathField=&quot;200&quot; org.eclipse.ui.ide.resourceField=&quot;150&quot; org.eclipse.ui.ide.severityAndDescriptionField=&quot;500&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.resourceField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.pathField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.locationField&quot;/>&#xD;&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.markerType&quot;/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
       <menus xmi:id="_84yF4A6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.views.ProblemView">
@@ -251,20 +264,38 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_8sWzdA6-EeuxX9R8RfZQvw" elementId="org.eclipse.jdt.ui.JavadocView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Javadoc" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/javadoc.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.jdt.internal.ui.infoviews.JavadocView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.jdt.ui"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Java</tags>
+      <menus xmi:id="_DSJswCWqEeuIy8st3qZyiw" elementId="org.eclipse.jdt.ui.JavadocView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_DSJswSWqEeuIy8st3qZyiw" elementId="org.eclipse.jdt.ui.JavadocView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_8sWzdQ6-EeuxX9R8RfZQvw" elementId="org.eclipse.jdt.ui.SourceView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Declaration" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/source.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.jdt.internal.ui.infoviews.SourceView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.jdt.ui"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Java</tags>
+      <menus xmi:id="_DbhrMCWqEeuIy8st3qZyiw" elementId="org.eclipse.jdt.ui.SourceView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_DbhrMSWqEeuIy8st3qZyiw" elementId="org.eclipse.jdt.ui.SourceView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_8sYBkA6-EeuxX9R8RfZQvw" elementId="org.eclipse.search.ui.views.SearchView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.search2.internal.ui.SearchView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.search"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view isPinned=&quot;false&quot;>&#xD;&#xA;&lt;view IMemento.internal.id=&quot;&quot; org.eclipse.search.lastActivation=&quot;0&quot;/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <menus xmi:id="_nzIEUCTDEeuaO41F1MNKqw" elementId="org.eclipse.search.ui.views.SearchView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_nzIEUSTDEeuaO41F1MNKqw" elementId="org.eclipse.search.ui.views.SearchView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_8sYBkQ6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.console.ConsoleView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview16/console_view.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.console.ConsoleView"/>
@@ -332,6 +363,18 @@
       <tags>View</tags>
       <tags>categoryTag:Ant</tags>
     </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_TD3jQB9uEeu-05qN46LNrw" elementId="org.eclipse.jdt.callhierarchy.view" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/call_hierarchy.png" tooltip="" closeable="true">
+      <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.jdt.ui"/>
+      <persistedState key="originalCompatibilityViewClass" value="org.eclipse.jdt.internal.ui.callhierarchy.CallHierarchyViewPart"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view search_scope_type=&quot;1&quot;/>"/>
+      <tags>View</tags>
+      <tags>categoryTag:Java</tags>
+      <menus xmi:id="_TEX5kB9uEeu-05qN46LNrw" elementId="org.eclipse.jdt.callhierarchy.view">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_TEX5kR9uEeu-05qN46LNrw" elementId="org.eclipse.jdt.callhierarchy.view" visible="false"/>
+    </sharedElements>
     <trimBars xmi:id="_7whdUw6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.platform">
       <children xsi:type="menu:ToolBar" xmi:id="_8mQygA6-EeuxX9R8RfZQvw" elementId="group.file" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -339,7 +382,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_8mRZkA6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_9AnHUB6EEeuPAJaEgISpkQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_70KAYw6-EeuxX9R8RfZQvw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_buYrxyWiEeuIy8st3qZyiw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_70KAYw6-EeuxX9R8RfZQvw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_8mRZkQ6-EeuxX9R8RfZQvw" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -370,7 +413,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_8mSnsA6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_9Ao8gR6EEeuPAJaEgISpkQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_70FIHA6-EeuxX9R8RfZQvw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_buicwCWiEeuIy8st3qZyiw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_70FIHA6-EeuxX9R8RfZQvw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_8mSnsQ6-EeuxX9R8RfZQvw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -416,6 +459,10 @@
     </trimBars>
     <trimBars xmi:id="_7whdWQ6-EeuxX9R8RfZQvw" elementId="org.eclipse.ui.trim.vertical2" contributorURI="platform:/plugin/org.eclipse.platform" toBeRendered="false" side="Right">
       <children xsi:type="menu:ToolControl" xmi:id="_SpI0wBHpEeuRdcSV5v0_gw" elementId="org.eclipse.ui.editorss(IDEWindow).(org.eclipse.jdt.ui.JavaPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_DGaE4CWsEeuIy8st3qZyiw" elementId="PartStack@47755126(IDEWindow).(org.eclipse.jdt.ui.JavaPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
         <tags>Draggable</tags>
       </children>
