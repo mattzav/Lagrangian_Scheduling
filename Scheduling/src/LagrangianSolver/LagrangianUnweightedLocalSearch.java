@@ -18,7 +18,7 @@ import jxl.write.WriteException;
 
 public class LagrangianUnweightedLocalSearch {
 
-	private static final String EXCEL_FILE_LOCATION = "C:\\Users\\Matte\\Dropbox\\Scheduling\\Job diversi\\Articolo\\Risultati Numerici\\LocalSearch\\lambda = ";
+	private static final String EXCEL_FILE_LOCATION = "C:\\Users\\Matte\\Dropbox\\Scheduling\\Job diversi\\Articolo\\Risultati Numerici\\Unweighted\\lambda = ";
 	static WritableWorkbook workBook = null;
 	static WritableSheet excelSheet;
 
@@ -39,7 +39,7 @@ public class LagrangianUnweightedLocalSearch {
 
 	public static long start, timeToBest;
 	public static double timeLimit;
-	public static int seed = 1;
+	public static int seed = 953;
 
 	public static Random r;
 
@@ -60,14 +60,14 @@ public class LagrangianUnweightedLocalSearch {
 
 			cplex.setOut(null);
 
-			for (int pow = 1; pow <= 4; pow++) {
-				for (nA = 20; nA <= 20; nA += 50) {
-					for (nB = nA; nB <= nA + 30; nB += 10) {
+			for (int pow = 0; pow <= 1; pow++) {
+				for (nA = 100; nA <= 100; nA += 50) {
+					for (nB = nA + 50; nB <= nA + 50; nB += 10) {
 
 						n = nA + nB;
 
 						// create Excel file
-						createExcelFile(pow, nA, nB);
+//						createExcelFile(pow, nA, nB);
 						int excelRow = 1;
 
 						// create binary x variables
@@ -75,7 +75,7 @@ public class LagrangianUnweightedLocalSearch {
 						for (int i = 0; i < n; i++)
 							x[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
 
-						for (int scenario = 0; scenario < 50; scenario++) {
+						for (int scenario = 0; scenario < 1; scenario++) {
 
 							initParam(Math.pow(10, pow)); // init parameters
 
@@ -110,7 +110,7 @@ public class LagrangianUnweightedLocalSearch {
 							long timeToExit = System.currentTimeMillis() - start;
 
 							// add to file Excel the results
-							addValueToExcelFile(excelRow, Math.pow(10, pow), timeToExit);
+//							addValueToExcelFile(excelRow, Math.pow(10, pow), timeToExit);
 
 							excelRow++;
 
@@ -124,7 +124,7 @@ public class LagrangianUnweightedLocalSearch {
 						closeExcelFile();
 					}
 				}
-				seed = 1;
+				seed = 953;
 			}
 		} catch (IloException e) {
 			System.err.println("MAIN ERROR");
@@ -310,7 +310,7 @@ public class LagrangianUnweightedLocalSearch {
 
 			label = new Label(8, 0, "Seed");
 			excelSheet.addCell(label);
-			
+
 			label = new Label(9, 0, "AVG exchange");
 			excelSheet.addCell(label);
 

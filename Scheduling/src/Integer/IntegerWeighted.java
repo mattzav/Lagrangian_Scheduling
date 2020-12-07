@@ -23,14 +23,14 @@ public class IntegerWeighted {
 
 	public static int n, nA, nB; //
 	public static double[] d;//
-	public static int p[]; //
+	public static double p[]; //
 	public static double Pa, Pb, P;
 	public static IloNumVar[][] x;
 	public static IloNumVar[][] w;
 
 	public static long start, elapsed, elapsedFor5;
 	public static Random r;
-	public static int[] weights;
+	public static double[] weights;
 	public static int seed = 1;
 
 	public static void main(String[] args) {
@@ -39,12 +39,12 @@ public class IntegerWeighted {
 //		createExcelFile();
 //		int excelRow = 1;
 
-		for (nA = 20; nA <= 20; nA += 51) {
-			for (nB = 20; nB <= 20; nB += 5) {
+		for (nA = 4; nA <= 5; nA += 51) {
+			for (nB = 5; nB <= 5; nB += 5) {
 				System.out.println("\n STARTING nA = " + nA + " - nB = " + nB);
 				System.out.println("------------");
 				int count = 0;
-				for (int scenario = 1; scenario < 2; scenario++) {
+				for (int scenario = 1; scenario < 10; scenario++) {
 
 					r.setSeed(seed++);
 					System.out.println("\n SCENARIO = " + scenario + "\n");
@@ -79,7 +79,7 @@ public class IntegerWeighted {
 //							// if (d[i] > 0)
 //							// System.out.println("d_" + i + " = " + d[i]);
 								for (int j = 0; j < n; j++) {
-									if (cplex.getValue(x[i][j]) >= 1 - Math.pow(10, -6))
+									if (cplex.getValue(x[i][j]) >= 1 - Math.pow(10, -4))
 										System.out.println("x_{" + i + "," + j + "} = " + cplex.getValue(x[i][j]));
 								}
 							}
@@ -177,19 +177,19 @@ public class IntegerWeighted {
 
 	public static void initParam() {
 
-		p = new int[n];
+		p = new double[n];
 		d = new double[n];
-		weights = new int[n];
+		weights = new double[n];
 
 		System.out.println("----------------");
 		System.out.println("Proc");
 		for (int i = 0; i < n; i++) {
-			p[i] = r.nextInt(25) + 1;
+			p[i] = r.nextDouble() * 4;
 			System.out.print(p[i] + " ");
 		}
 		System.out.println("\n---------------\nWeigths");
 		for (int i = 0; i < n; i++) {
-			weights[i] = r.nextInt(25) + 1;
+			weights[i] = r.nextDouble() * 4;
 			System.out.print(weights[i] + " ");
 		}
 

@@ -5,38 +5,38 @@
 		<item key="DIALOG_Y_ORIGIN" value="505"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="lb"/>
+		<item key="selection" value="initPa"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="lb"/>
-			<item value="improve"/>
-			<item value="BEFORE"/>
-			<item value="im"/>
-			<item value="initP"/>
-			<item value="init"/>
-			<item value="initpARA"/>
-			<item value="addVa"/>
-			<item value="exchange"/>
-			<item value="lastIter"/>
 			<item value="initPa"/>
+			<item value="initP"/>
 			<item value="initPara"/>
-			<item value="impr"/>
-			<item value="update"/>
-			<item value="initi"/>
+			<item value="init"/>
+			<item value="initParam"/>
+			<item value="&gt;= 1"/>
+			<item value="&gt;=1"/>
+			<item value="1"/>
+			<item value="addVal"/>
+			<item value="initPar"/>
+			<item value="initPra"/>
+			<item value="intiPar"/>
+			<item value="condi"/>
+			<item value="Math.pow"/>
+			<item value="sumA"/>
 		</list>
 		<list key="replacehistory">
 			<item value="weights"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="227"/>
-		<item key="DIALOG_Y_ORIGIN" value="315"/>
-		<item key="DIALOG_WIDTH" value="385"/>
-		<item key="DIALOG_HEIGHT" value="523"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
+		<item key="DIALOG_X_ORIGIN" value="311"/>
+		<item key="DIALOG_Y_ORIGIN" value="424"/>
+		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
 	</section>
 </section>
